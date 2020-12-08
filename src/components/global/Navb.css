@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+
+header {
+    background: rgb(165, 105, 27);
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+header h1 {
+        color: white;
+        /* color: var(--blanco); */
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 0.9rem;
+
+}
+
+html {
+    font-size: 15px;
+  }
+
