@@ -1,28 +1,27 @@
-import { Navbar } from 'react-bootstrap';
-import CartWidget from '../CartWidget/CartWidget.jsx';
-import './Navb.css';
-// import '.src/assets/cart.png'
 
-function NavAndWidgetCart () {
+import {useState} from 'react';
+import Nav from '../Nav/Nav';
+// import './NavAndWidjetCart.css';
+import WidgetCart from '../WidgetCart/WidgetCart';
+
+
+const NavAndWidgetCart = () => {
+        const [showWidgetCart, setShowWidgetCart] = useState(false);
+    
+        const openWidgetCart = () => {
+            setShowWidgetCart(!showWidgetCart);
+        }
+
+
+
         
         
         return (
-                <header clasName="justify-content-center text-center">
-                        <h1 className="text-center">Tienda MusiKal</h1>
-                
-                        <div clasName="container">
-                                <nav className="nav justify-content-center text-right">
-                                        <a href="a" className="nav-link text-white">Guitarras</a>
-                                        <a href="a" className="nav-link text-white">Bajos</a>
-                                        <a href="a" className="nav-link text-white">Baterias</a>
-                                        <a href="a" className="nav-link text-white">Microfonos</a>
-                                        <a href="a" className="nav-link text-white">Accsesorios</a>
-                                </nav>
-                                <CartWidget/>       
-                        </div>
-                                
-                </header>
-                
+                <>
+                        <Nav titulo="Tienda Musikal" action={openWidgetCart}/>
+                        <WidgetCart show={showWidgetCart}/>       
+                </>
+                                              
         )
 }
 

@@ -16,5 +16,6 @@
   
   .featuredProducts ul li {
     width: 20%;
+    list-style: none;
   }
     
