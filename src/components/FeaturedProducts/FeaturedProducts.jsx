@@ -1,6 +1,6 @@
-import './ListContainer.css'
+import './FeaturedProducts.css'
 
-function ListContainer (props) {
+function FeaturedProducts (props) {
     return (
       <div className="contenedor1">
           <h2>
@@ -12,4 +12,4 @@ function ListContainer (props) {
     )
   }
 
-  export default ListContainer;
+  export default FeaturedProducts;

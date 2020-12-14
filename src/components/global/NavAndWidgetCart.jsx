@@ -1,15 +1,16 @@
+import { Navbar } from 'react-bootstrap';
 import CartWidget from '../CartWidget/CartWidget.jsx';
 import './Navb.css';
 // import '.src/assets/cart.png'
 
-function Nav () {
+function NavAndWidgetCart () {
         
         
         return (
                 <header clasName="justify-content-center text-center">
                         <h1 className="text-center">Tienda MusiKal</h1>
                 
-                        <div clasName="justify-content-center">
+                        <div clasName="container">
                                 <nav className="nav justify-content-center text-right">
                                         <a href="a" className="nav-link text-white">Guitarras</a>
                                         <a href="a" className="nav-link text-white">Bajos</a>
@@ -25,4 +26,4 @@ function Nav () {
         )
 }
 
-export default Nav;
+export default NavAndWidgetCart;
