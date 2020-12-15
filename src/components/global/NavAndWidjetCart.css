@@ -7,11 +7,12 @@ header {
 }
 
 header h1 {
-        color: white;
+        color: yellow;
         /* color: var(--blanco); */
-        font-size: 3rem;
+        font-size: 4rem;
         letter-spacing: 0.5rem;
         margin-bottom: 0.9rem;
+        /* font-weight: 900; */
 
 }
 
