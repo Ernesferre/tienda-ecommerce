@@ -12,9 +12,6 @@ const NavAndWidgetCart = () => {
             setShowWidgetCart(!showWidgetCart);
         }
 
-
-
-        
         
         return (
                 <>
