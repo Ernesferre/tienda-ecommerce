@@ -20,4 +20,8 @@
     width: 20%;
     list-style: none;
   }
-    
+  
+  .cargando {
+    text-align: center;
+    font-size: 3rem;
+  }
