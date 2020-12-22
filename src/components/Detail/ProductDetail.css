@@ -1,0 +1,18 @@
+
+.productDetail {
+      text-align: center;
+}
+
+.productDetail h1 {
+      margin-bottom: 3rem;
+      margin-top: 1rem;
+}
+
+.productDetail img {
+      border-width: 1rem;
+      border-radius: 2rem;
+      border-color: tomato;
+      margin-bottom: 2rem;
+      width: 300px;
+      border-style:solid 
+}
