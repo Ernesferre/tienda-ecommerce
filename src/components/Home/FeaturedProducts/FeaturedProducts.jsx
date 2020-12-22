@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
 
 const FeaturedProducts = () => {

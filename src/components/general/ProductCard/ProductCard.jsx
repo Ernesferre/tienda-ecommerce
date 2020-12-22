@@ -1,4 +1,4 @@
-import StateCounter from '../StateCounter/StateCounter';
+import StateCounter from '../../Home/StateCounter/StateCounter.jsx';
 import './ProductCard.css';
 
 const ProductCard = ({titulo, precio}) => {
