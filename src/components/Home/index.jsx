@@ -1,4 +1,4 @@
-import FeaturedProducts from './FeaturedProducts/FeaturedProducts'
+import FeaturedProducts from './FeaturedProducts/FeaturedProducts.jsx'
 
 const Home = () => {
     return (

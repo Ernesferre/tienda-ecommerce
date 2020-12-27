@@ -1,6 +1,13 @@
 
 .productDetail {
+      display: flex;
+      justify-content: center;
+
+}
+
+.productDetail {
       text-align: center;
+      padding: 2rem;
 }
 
 .productDetail h1 {
@@ -9,10 +16,11 @@
 }
 
 .productDetail img {
-      border-width: 1rem;
-      border-radius: 2rem;
-      border-color: tomato;
+      border-width: 0.3rem;
+      border-radius:;
+      border-color:rgb(110, 115, 192);
       margin-bottom: 2rem;
       width: 300px;
-      border-style:solid 
+      border-style:outset;
+      padding: 0rem;
 }

@@ -1,52 +1,39 @@
 import {useState,useEffect} from "react";
+import { listaProductos } from "../../Assets/productos";
 import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
+
 
 const FeaturedProducts = () => {
     
     const [items, setItems] = useState ([]);
 
-    
-    // Hacer de cuenta que esta constante es una API
-    const products = [
-        {
-            id: 1,
-            titulo: "Guitarra Criolla",
-            Precio: 5900,
-        },
-        {
-            id: 2,
-            titulo: "Bateria 7 cuerpos",
-            Precio: 16300,
-        },
-        {
-            id: 3,
-            titulo: "Microfono Shure 200",
-            Precio: 8500,
-        },
-        {
-            id: 4,
-            titulo: "Bajo 4 cuerdas",
-            Precio: 12000,
-        },
-
-    ]
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout(() => {
-            resolve(products);
-        }, 5000)
+            resolve(listaProductos);
+        }, 50)
     })
 
+const getProducstFromDB = async () => {
+    try {
+        const result = await getProducts;
+        setItems(result);
+    } catch(error) {
+        alert("No podemos mostrar los productos en este momento");
+    }
+}
+
+
     useEffect(() => {
-        getProducts.then(rta => setItems(rta));
+        getProducstFromDB();
     // eslint-disable-next-line react-hooks/exhaustive-deps
 
     }, []);
 
    
 
-
+console.log(items);
 
     
 
@@ -56,8 +43,6 @@ const FeaturedProducts = () => {
             <div className="container">
                 
 
-                
-
                 {
                     items.length ?
                         <>
@@ -65,11 +50,16 @@ const FeaturedProducts = () => {
 
                             <ul>
                                 {
-                                    items.map(item => (
-                                        <li key={item.id}>
+                                    
+                                    items.map((item,index) => (
+                                        <li key={index}>
                                             <ProductCard
-                                                titulo={item.titulo} 
-                                                precio={item.Precio}
+                                                imagen={item.imagen}
+                                                titulo={item.titulo}
+                                                descripcion={item.descripcion} 
+                                                precio={item.precio}
+                                                id={item.id}
+                                                
                                             />
                                         </li>
                                     ))
@@ -80,7 +70,8 @@ const FeaturedProducts = () => {
                         
                     <p className="cargando">Cargando Items...</p>
                 }
-            </div>
+                </div>
+            
         </section>
     )
 }

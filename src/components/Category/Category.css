@@ -1,0 +1,37 @@
+/* .Category ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.Category ul li {
+  width: 20%;
+  list-style: none;
+} */
+
+.Category {
+  padding: 2rem 0;
+  background-color:black ; 
+}
+
+.Category h2 {
+  color:brown;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-family:  arial;
+  text-decoration-line: none;
+}
+
+.Category ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.Category ul li {
+  width: 20%;
+  list-style: none;
+}

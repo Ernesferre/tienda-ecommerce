@@ -4,6 +4,7 @@ header {
     background: rgb(165, 105, 27);
     padding: 10px 0 10px 0;
     text-align: center;
+    position: fixed;
 }
 
 header h1 {

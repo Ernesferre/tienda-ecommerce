@@ -1,16 +1,35 @@
+import StateCounter from '../Home/StateCounter/StateCounter.jsx';
+
 import './ProductDetail.css';
 
 
-const ProductDetail = ({item}) => {
-  return (
-    <div className="productDetail">
-      <h1>{item.nombre} </h1>
-      <img src={item.foto} width="300" alt=""/>
-      <p> {item.descripcion}</p>
-      <p>{item.precio}</p>
-      <button>Agregar al Carrito</button>
 
-    </div>
+
+
+const ProductDetail = ({titulo,id,imagen,descripcion,precio})=> {
+  return (
+    <>
+    
+        <article>
+          <h1> {titulo} </h1>
+          <p>El id de este producto es {id}</p>
+          <img src={imagen} alt="" />
+          <p> {descripcion}</p>
+          <p>{precio}</p>
+        
+
+      
+
+    
+      <StateCounter/>
+        </article>
+
+  </>
+      
+     
+
+  
+  
   )
 }
 

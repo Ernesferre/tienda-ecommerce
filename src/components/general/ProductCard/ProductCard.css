@@ -4,11 +4,12 @@
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: box-shadow 0.5s;
+  margin: 1rem;
 }
 
 .productCard:hover {
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
-  color:tomato;
+ 
   
 }
 
@@ -30,12 +31,12 @@ div h3 p:hover  {
 
 .productCard div h3 {
   color: var(--text);
-  font-size: 1.3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .productCard div p {
   color: var(--text);
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 100;
 }

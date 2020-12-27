@@ -1,46 +1,75 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios';
+import {useEffect,useState} from 'react';
+import {useParams} from 'react-router-dom';
+import { listaProductos } from "../Assets/productos";
+import ProductCard from '../general/ProductCard/ProductCard';
+import './Category.css';
+
 
 const Category = () => {
-    const [people, setPeople] = useState([]);
+    
+    const [product, setProduct] = useState();
 
-    const getPeople = async () => {
-        try {
-            let response = await axios('https://swapi.dev/api/people/');
+    const {category_name} = useParams();
 
-            setPeople(response.data.results);
-        } catch(err) {
-            console.log(err);
-        }
-    }
+    const getProduct = new Promise ((resolve,reject) => {
+        setTimeout (() => {
+          const CategoriaClickeada = listaProductos.filter ( product => {
+              return product.categoria === category_name
+          });
 
-    useEffect(() => {
-        getPeople();
-    }, [])
+          resolve (CategoriaClickeada);
+          console.log(CategoriaClickeada);
+        }, 50);
+    
+      });
 
-    return (
-        <>
-            <h1>Star Wars info</h1>
-            {
-                people.length ?
-                people.map(person => (
-                    <article key={person.created}>
-                        <h2>{person.name}</h2>
-                        <p>Altura: {person.height}</p>
-                        {
-                            !!person.starships.length &&
-                            <ul>
-                                {
-                                    person.starships.map((nave, index) => <li key={index}>{nave}</li>)
-                                }
-                            </ul>
-                        }
-                    </article>
-                )) :
-                <p>Cargando personajes...</p>
-            }
-        </>
-    )
+    
+      useEffect (() => {
+        getProduct.then(response => setProduct(response));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [category_name]);
+
+    
+// useEffect(() => {
+//     console.log(category_name);
+//     }, [category_name])
+
+    
+    
+    // return (
+    //     <>
+    //         <h1>{category_name}</h1>
+    //     </>
+    // )
+
+    
+
+    return product ? (
+        <div className="Category">
+            <ul> 
+                {
+                    product.map((prod,index) => (
+                        <li key={index}>
+                            <ProductCard
+                                titulo={prod.titulo}
+                                id={prod.id}
+                                imagen={prod.imagen}
+                                descripcion={prod.descripcion} 
+                                precio={prod.precio}
+                            />
+                        </li>
+                    ))
+                
+                }
+
+            </ul>
+        </div>
+    ):
+                             
+    <p>Cargando producto...</p>
+          
+      
+    
 }
 
 export default Category;

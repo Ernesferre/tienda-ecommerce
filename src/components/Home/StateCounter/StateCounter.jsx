@@ -20,14 +20,14 @@ function StateCounter ()  {
           <div>
               <div className="contador">
               
-                <a href="#" onClick={() => setValor (restar)}>-</a>
-                // eslint-disable-next-line
+                <button className="btn btn-dark" width="100" onClick={() => setValor (restar)}>-</button>
+                {/* eslint-disable-next-line */}
                 
 
                 <input type="text" value={valor} placeholder="0" width="5px"/>
                 
-                <a href="#" onClick={() => setValor (sumar)}>+</a>
-                // eslint-disable-next-line
+                <button className="btn btn-dark" onClick={() => setValor (sumar)}>+</button>
+                {/* eslint-disable-next-line */}
               </div>
               <button className="btn btn-info">Agregar a Carrito</button>
           </div>

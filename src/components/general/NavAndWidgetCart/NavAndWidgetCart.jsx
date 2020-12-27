@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Nav from '../Nav/Nav';
 // import './NavAndWidjetCart.css';
 import WidgetCart from '../WidgetCart/WidgetCart';
+import {Link} from 'react-router-dom'
 
 
 const NavAndWidgetCart = () => {
@@ -15,7 +16,7 @@ const NavAndWidgetCart = () => {
         
         return (
                 <>
-                        <Nav titulo="Tienda Musikal" action={openWidgetCart}/>
+                        <Nav  titulo="Tienda Musikal" action={openWidgetCart}/>
                         <WidgetCart show={showWidgetCart}/>       
                 </>
                                               

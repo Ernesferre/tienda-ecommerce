@@ -1,21 +1,51 @@
 import './Nav.css';
 import NavItem from '../NavItem/NavItem';
 import NavCart from '../NavCart/NavCart';
+import {Link} from 'react-router-dom'
 
 function Nav({titulo, action}) {
+   
+    const menuItems = [
+        { 
+            texto: 'Guitarras',
+            ruta: '/Category/Guitarras',
+        },
+        { 
+            texto: 'Bajos',
+            ruta: '/Category/Bajos',
+        },
+        { 
+            texto: 'Baterias',
+            ruta: '/Category/Baterias',
+        },
+        { 
+            texto: 'Microfonos',
+            ruta: '/Category/Microfonos',
+        },
+        { 
+            texto: 'Accesorios',
+            ruta: '/Category/Accesorios',
+        },
+    
+    ]
+    
+    const qty = 0;
+    
     return (
         <nav>
             <div className="container">
-                <h1>{titulo}</h1>
+                <h1><Link className="text-dark" to={"/"} >{titulo} </Link></h1>
 
                 <ul>
-                    <li><NavItem text="Guitarras" url="https://www.google.com" /></li>
-                    <li><NavItem text="Bajos"/></li>
-                    <li><NavItem text="Baterias" /></li>
-                    <li><NavItem text="Microfonos" /></li>
-                    <li><NavItem text="Accesorios" /></li>
+                   {
+                       menuItems.map((seccion, index) => <NavItem key={index} text={seccion.texto} url={seccion.ruta}/>)
+                   } 
                 </ul>
-                <NavCart action={action} />
+
+                {
+                    !!qty && <NavCart action={action} qty={qty}/>
+                }
+                
             </div>
         </nav>
     )
