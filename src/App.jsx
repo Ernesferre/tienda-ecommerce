@@ -8,8 +8,10 @@ import Category from './components/Category/Category.jsx'
 import Detail from './components/Detail';
 import {BrowserRouter,Switch,Route} from "react-router-dom"; //Dependencia que me permite generar rutas 
 import Error404 from './components/general/Error404/index.jsx';
-// import {Link} from 'react';
+import Cart from './components/Cart'
+import Checkout from './components/Checkout'
 
+// import {Link} from 'react';
 
 
 
@@ -33,11 +35,19 @@ function App() {
           <Detail/>
         </Route>
 
+        <Route path="/Cart">
+          <Cart/>
+        </Route>
+
+        <Route path="/Checkout">
+          <Checkout/>
+        </Route>
+
         
 
         
         {/* no me funciona  */}
-        <Route path="*" >
+        <Route path="*">
           <Error404 />   
         </Route>
 

@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './StateCounter.css';
+import { useHistory } from "react-router-dom";
 
 function StateCounter ()  {
   
@@ -15,9 +16,25 @@ function StateCounter ()  {
     return resultado; 
   }
 
+  const [click,setClick] = useState(false);
+
+  let history = useHistory();
+
+    const handleClickAdd =(e)=>{ 
+        if(click){
+            history.push("/cart");
+        }
+        e.target.innerText="Ir al Cart";
+        e.target.className="add-button color-clicked";
+        setClick(true);
+    }
+
+    
+  
+
   return (
       
-          <div>
+          <>
               <div className="contador">
               
                 <button className="btn btn-dark" width="100" onClick={() => setValor (restar)}>-</button>
@@ -29,12 +46,16 @@ function StateCounter ()  {
                 <button className="btn btn-dark" onClick={() => setValor (sumar)}>+</button>
                 {/* eslint-disable-next-line */}
               </div>
-              <button className="btn btn-info">Agregar a Carrito</button>
-          </div>
+              <button 
+              className="btn btn-info"
+              onClick={handleClickAdd}
+               >Agregar a Carrito
+               </button>
+          </>
       
   )
-}
-  
+
+  }
 
 
 export default StateCounter;
