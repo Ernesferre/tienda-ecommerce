@@ -1,6 +1,10 @@
 .contador {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  margin-bottom: 1rem;
+  text-align: center;
+  size: 10rem;
+  
 }
 
 .contador a {

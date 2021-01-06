@@ -25,7 +25,7 @@ function StateCounter ()  {
             history.push("/cart");
         }
         e.target.innerText="Ir al Cart";
-        e.target.className="add-button color-clicked";
+        // e.target.className="add-button color-clicked";
         setClick(true);
     }
 
@@ -36,16 +36,13 @@ function StateCounter ()  {
       
           <>
               <div className="contador">
-              
-                <button className="btn btn-dark" width="100" onClick={() => setValor (restar)}>-</button>
-                {/* eslint-disable-next-line */}
-                
-
-                <input type="text" value={valor} placeholder="0" width="5px"/>
-                
-                <button className="btn btn-dark" onClick={() => setValor (sumar)}>+</button>
-                {/* eslint-disable-next-line */}
+                  <button className="btn btn-primary" width="100" onClick={() => setValor (restar)}>-</button>
+                  {/* eslint-disable-next-line */}
+                  <input type="text" value={valor} placeholder="0" width="5px"/>
+                  <button className="btn btn-primary" onClick={() => setValor (sumar)}>+</button>
+                  {/* eslint-disable-next-line */}
               </div>
+
               <button 
               className="btn btn-info"
               onClick={handleClickAdd}

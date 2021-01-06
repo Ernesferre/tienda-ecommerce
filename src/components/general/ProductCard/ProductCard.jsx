@@ -5,16 +5,23 @@ import {Link} from 'react-router-dom';
 
 const ProductCard = ({imagen,titulo,descripcion,precio,id}) => {
     return (
+        
         <article className="productCard">
-            <img src={imagen} alt="Mi producto de prueba"/>
+            
             <div>
+                <img src={imagen} alt="Mi producto de prueba"/>
+
+                
+
+                <hr/>
                 <h3>{titulo}</h3>
                 <p>{descripcion}</p>
-                <p> $ {precio} </p>
+                <span> $ {precio} </span>
                 <hr/>
-                <StateCounter/> 
+                {/* <StateCounter/>  */}
                 <Link to={`/detail/${id}`} className="btn btn-warning" activeClassName="active">Ver mas</Link>
             </div>
+
         </article>
     )
 }

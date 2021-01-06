@@ -34,7 +34,7 @@ function Nav({titulo, action}) {
     return (
         <nav>
             <div className="container">
-                <h1><Link className="text-dark" to={"/"} >{titulo} </Link></h1>
+                <h1><Link to={"/"} >{titulo} </Link></h1>
 
                 <ul>
                    {

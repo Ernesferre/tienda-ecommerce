@@ -1,6 +1,6 @@
 nav {
   background:tomato;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 nav .container {
@@ -8,21 +8,22 @@ nav .container {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-bottom: 2rem;
 }
 
-nav h1 {
-  
-  color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+nav h1 a {
+  font-family: 'Permanent Marker', cursive;
+  color:white;
   font-size: 4rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: -0.5px;
   margin-bottom: 2rem;
   font-weight: 900;
 }
 
-nav h1 :hover {
+nav h1 a:hover {
   text-decoration: none;
-  font-size: 4.5rem;
+  font-size: 5rem;
+  color: black;
 }
 
 nav ul {
@@ -50,7 +51,7 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-  color: var(--blanco);
+  color: white;
   font-size: 1.5rem;
   position: relative;
 }

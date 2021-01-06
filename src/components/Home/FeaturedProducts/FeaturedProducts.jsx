@@ -10,9 +10,13 @@ const FeaturedProducts = () => {
 
 
     const getProducts = new Promise ((resolve, reject) => {
+        const Prod_Destacados = listaProductos.filter(item => {
+            return item.destacado === true
+        });
         setTimeout(() => {
-            resolve(listaProductos);
-        }, 50)
+            resolve(Prod_Destacados);
+            console.log (Prod_Destacados);
+        }, 0)
     })
 
 const getProducstFromDB = async () => {

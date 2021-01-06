@@ -10,6 +10,7 @@ import {BrowserRouter,Switch,Route} from "react-router-dom"; //Dependencia que m
 import Error404 from './components/general/Error404/index.jsx';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
+import Footer from './components/general/Footer'
 
 // import {Link} from 'react';
 
@@ -55,7 +56,7 @@ function App() {
 
       </Switch>
 
-      {/* Colocar footer por fuera del switch para que quede fijo */}
+      <Footer />
     </BrowserRouter>
   );
     

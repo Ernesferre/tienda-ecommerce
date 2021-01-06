@@ -32,7 +32,7 @@ const Detail = () => {
 
   
 return product ? (
-  <div className="container bg-secondary">
+  <div className="container">
     <ProductDetail 
       titulo={product.titulo}
       id={product.id}

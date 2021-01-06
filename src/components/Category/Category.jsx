@@ -19,7 +19,7 @@ const Category = () => {
 
           resolve (CategoriaClickeada);
           console.log(CategoriaClickeada);
-        }, 50);
+        }, );
     
       });
 
@@ -30,22 +30,10 @@ const Category = () => {
       }, [category_name]);
 
     
-// useEffect(() => {
-//     console.log(category_name);
-//     }, [category_name])
-
-    
-    
-    // return (
-    //     <>
-    //         <h1>{category_name}</h1>
-    //     </>
-    // )
-
-    
 
     return product ? (
         <div className="Category">
+            <h2>{category_name}</h2>
             <ul> 
                 {
                     product.map((prod,index) => (

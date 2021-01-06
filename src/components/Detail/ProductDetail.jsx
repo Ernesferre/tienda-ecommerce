@@ -10,20 +10,31 @@ const ProductDetail = ({titulo,id,imagen,descripcion,precio})=> {
   return (
     <>
     
-        <article>
-          <h1> {titulo} </h1>
-          <p>El id de este producto es {id}</p>
+    <div className="contenedor">
+      
+        <div className="contimagen">
+          
+          {/* <p>El id de este producto es {id}</p> */}
           <img src={imagen} alt="" />
-          <p> {descripcion}</p>
-          <p>{precio}</p>
+          
+          
+        </div>
+        <div className="counter">
+          	
+            <h2 > {titulo} </h2>
+            <hr/>
+            <p> {descripcion}</p>
+            <span> $ {precio}</span>
+            <br/>
+            <br/>
+            <p className="strong">Cantidad Requerida</p>
+          <StateCounter/>
+          
+
+        </div>
         
 
-      
-
-    
-      <StateCounter/>
-        </article>
-
+  </div>
   </>
       
      
