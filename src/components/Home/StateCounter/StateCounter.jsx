@@ -1,58 +1,55 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import './StateCounter.css';
 import { useHistory } from "react-router-dom";
+import {Store} from '../../../store';
 
-function StateCounter ()  {
+
+const StateCounter = ({item}) =>  {
+    
+    const history = useHistory();
+    const [data, setData] = useContext(Store);
+    const [qty, setQty] = useState(1);
   
-  const [valor, setValor] = useState(1);
-  
-  function restar () {
-    let resultado = valor - 1;
-    return resultado; 
-  }
+  const handleClickResta = () => {	
+    if(qty > 1) {	
+        setQty(qty - 1);	
+    }	
+}
 
-  function sumar  () {
-    let resultado = valor + 1;
-    return resultado; 
-  }
+const onAdd = () => {
+  setData({
+      ...data, 
+      cantidad: data.cantidad + qty,
+      items: [...data.items, item],
+  });
 
-  const [click,setClick] = useState(false);
 
-  let history = useHistory();
-
-    const handleClickAdd =(e)=>{ 
-        if(click){
-            history.push("/cart");
-        }
-        e.target.innerText="Ir al Cart";
-        // e.target.className="add-button color-clicked";
-        setClick(true);
-    }
+  history.push('/cart');
+  // alert(`Agregaste ${qty} productos al carrito`);	
+}
 
     
   
 
   return (
-      
-          <>
-              <div className="contador">
-                  <button className="btn btn-primary" width="100" onClick={() => setValor (restar)}>-</button>
-                  {/* eslint-disable-next-line */}
-                  <input type="text" value={valor} placeholder="0" width="5px"/>
-                  <button className="btn btn-primary" onClick={() => setValor (sumar)}>+</button>
-                  {/* eslint-disable-next-line */}
-              </div>
 
-              <button 
-              className="btn btn-info"
-              onClick={handleClickAdd}
-               >Agregar a Carrito
-               </button>
-          </>
-      
-  )
 
-  }
+<div className="caja align-items-center">
+      	<div className="qty ml-5">	
+          <button 	
+          disabled={qty === 1 ? 'disabled' : null } 	
+          onClick={handleClickResta}	
+          >	
+          -	
+          </button>	
+          <input type="text" value={qty} readOnly/>	
+          <button onClick={() => setQty(qty + 1)}>+</button>	
+        </div>
+
+        <button className="btn btn-primary" onClick={onAdd}>Agregar al carrito</button>
+</div>
+          
+  )}
 
 
 export default StateCounter;

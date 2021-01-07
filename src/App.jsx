@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import './reset.css';
 import './styles/App.css';
 import NavAndWidgetCart from './components/general/NavAndWidgetCart/NavAndWidgetCart.jsx';
@@ -11,53 +12,60 @@ import Error404 from './components/general/Error404/index.jsx';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import Footer from './components/general/Footer'
-
-// import {Link} from 'react';
-
-
+import {Store} from './store';
 
 
 function App() {
+  const [data, setData] = useState({
+    items: [],
+    cantidad: 0,
+    
+  })
+
   return (
-    <BrowserRouter>
-      {/* El "NavAndWidgetCart" queda fijo en todo momemto */}
-      <NavAndWidgetCart/>
-      
-      <Switch>
-       <Route exact path="/" >
-          <Home/>
-        </Route>
-
-        <Route path="/Category/:category_name?">
-          <Category/>
-        </Route>
-
-        <Route path="/detail/:itemId">
-          <Detail/>
-        </Route>
-
-        <Route path="/Cart">
-          <Cart/>
-        </Route>
-
-        <Route path="/Checkout">
-          <Checkout/>
-        </Route>
-
+    
+    <Store.Provider value={[data, setData]}>
+      <BrowserRouter>
+        {/* El "NavAndWidgetCart" queda fijo en todo momemto */}
+        <NavAndWidgetCart/>
         
+        <Switch>
+        <Route exact path="/" >
+            <Home/>
+          </Route>
 
-        
-        {/* no me funciona  */}
-        <Route path="*">
-          <Error404 />   
-        </Route>
+          <Route path="/Category/:category_name?">
+            <Category/>
+          </Route>
 
-        
+          <Route path="/detail/:itemId">
+            <Detail/>
+          </Route>
 
-      </Switch>
+          <Route path="/Cart">
+            <Cart/>
+          </Route>
 
-      <Footer />
-    </BrowserRouter>
+          <Route path="/Checkout">
+            <Checkout/>
+          </Route>
+
+          
+
+          
+          {/* no me funciona  */}
+          <Route path="*">
+            <Error404 />   
+          </Route>
+
+          
+
+        </Switch>
+
+        <Footer />
+      </BrowserRouter>
+    </Store.Provider>
+    
   );
     
   }

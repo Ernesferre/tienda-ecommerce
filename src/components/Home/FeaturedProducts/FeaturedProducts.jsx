@@ -15,7 +15,7 @@ const FeaturedProducts = () => {
         });
         setTimeout(() => {
             resolve(Prod_Destacados);
-            console.log (Prod_Destacados);
+            
         }, 0)
     })
 

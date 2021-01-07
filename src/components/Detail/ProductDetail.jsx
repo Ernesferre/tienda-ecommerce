@@ -1,6 +1,8 @@
 import StateCounter from '../Home/StateCounter/StateCounter.jsx';
-
+// import {useState} from 'react';
 import './ProductDetail.css';
+// import {Store} from '../../store';
+// import {useHistory} from 'react-router-dom';
 
 
 
