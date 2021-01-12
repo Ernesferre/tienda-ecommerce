@@ -42,9 +42,9 @@ function Nav({titulo, action}) {
                    } 
                 </ul>
 
-                {
-                    <NavCart action={action}/>
-                }
+                
+                <NavCart action={action}/>
+                
                 
             </div>
         </nav>

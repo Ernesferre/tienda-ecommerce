@@ -34,7 +34,7 @@ const onAdd = () => {
   return (
 
 
-<div className="caja align-items-center">
+<div>
       	<div className="qty ml-5">	
           <button 	
           disabled={qty === 1 ? 'disabled' : null } 	

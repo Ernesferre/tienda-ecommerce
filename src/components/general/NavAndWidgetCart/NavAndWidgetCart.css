@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 
 header {
-    background: rgb(165, 105, 27);
+    background: blue;
     padding: 10px 0 10px 0;
     text-align: center;
     position: fixed;
@@ -10,7 +10,7 @@ header {
 header h1 {
         color: yellow;
         /* color: var(--blanco); */
-        font-size: 4rem;
+        font-size: 3rem;
         letter-spacing: 0.5rem;
         margin-bottom: 0.9rem;
         /* font-weight: 900; */

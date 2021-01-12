@@ -13,13 +13,14 @@ import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import Footer from './components/general/Footer'
 import {Store} from './store';
+import { queryByTitle } from '@testing-library/react';
 
 
 function App() {
   const [data, setData] = useState({
     items: [],
     cantidad: 0,
-    
+    qty: 0,    
   })
 
   return (
