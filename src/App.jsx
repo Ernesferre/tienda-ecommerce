@@ -18,9 +18,9 @@ import { queryByTitle } from '@testing-library/react';
 
 function App() {
   const [data, setData] = useState({
-    items: [],
+    carrito: [],
     cantidad: 0,
-    qty: 0,    
+      
   })
 
   return (

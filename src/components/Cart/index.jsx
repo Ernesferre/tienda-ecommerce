@@ -6,19 +6,15 @@ const Cart = () => {
     const [data, setData] = useContext(Store);
     return (
         <>
-            <h1>Estás en el cart</h1>
+            <h1 className="text-center text-primary">Esta en el Cart</h1>
             {
-                data.items.map(item => <h2>{item.titulo}</h2>)
-            }
+               data.carrito.map(item => 
+                <h3 className="ml-4 mb-4 fontsize-4 text-success ">  Art: <span> {item.item} </span>- Cant:  <span> {item.cantidad} </span></h3>
+                
+            )}
+            <hr/>
         </>
     )
 }
 export default Cart;
 
-// const Cart = () => {
-//   return (
-//     <h1>Estas en el Cart</h1>
-//   )
-// }
-
-// export default Cart;

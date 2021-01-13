@@ -12,23 +12,18 @@ const WidgetCart = ({show, action}) => {
             <h2>Carrito de Compras</h2>
             <br/>
             {
-                data.items.map(item => 
-                <p>Articulo: {item.titulo} - <span>Cantidad: {data.qParcial} </span> </p>
+                data.carrito.map(item => 
+                <p>  Art: <span> {item.item} </span>- Cant:  <span> {item.cantidad}    </span> </p>
+
                 )
                 
             }
             
             
-            
-                
-        
-            
-            
-    
-            
             <button onClick={action}>Cerrar widget</button>
             <br/>
             <hr/>
+            
            
         </div>
     )
