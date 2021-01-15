@@ -18,7 +18,7 @@ const Category = () => {
           });
 
           resolve (CategoriaClickeada);
-          console.log(CategoriaClickeada);
+        //   console.log(CategoriaClickeada);
         }, );
     
       });

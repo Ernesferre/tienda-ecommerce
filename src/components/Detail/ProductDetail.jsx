@@ -8,6 +8,8 @@ const ProductDetail = ({item}) => {
     const [qty, setQty] = useState(1);
     const [data, setData] = useContext(Store);
     const history = useHistory();	
+
+    
     
     
     const handleClickResta = () => {	
@@ -20,7 +22,7 @@ const ProductDetail = ({item}) => {
 
         setData({
             ...data, 
-            carrito: [...data.carrito, {item: item.titulo, cantidad: qty}],
+            carrito: [...data.carrito, {titulo: item.titulo, cantidad: qty, precio: item.precio}],
             cantidad: data.cantidad + qty,
             
             
@@ -31,7 +33,7 @@ const ProductDetail = ({item}) => {
         history.push('/cart');
         // alert(`Agregaste ${qty} productos al carrito`);	
     }
-    console.log(data.carrito);
+    // console.log(carrito.precio);
     return (
         <article className="product">
             <div className="foto">

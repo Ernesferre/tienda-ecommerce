@@ -39,6 +39,7 @@ const getProducstFromDB = async () => {
 
 console.log(items);
 
+
     
 
 
@@ -51,6 +52,7 @@ console.log(items);
                     items.length ?
                         <>
                             <h2>Alguno de Nuestros Productos</h2>
+                            
 
                             <ul>
                                 {
