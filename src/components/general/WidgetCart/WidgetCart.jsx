@@ -6,24 +6,49 @@ import {Link} from 'react-router-dom';
 
 
 
-const WidgetCart = ({show, action}) => {
-    const [data, setData] = useContext(Store);
 
+const WidgetCart = ({show, action}) => {
+    const [data] = useContext(Store);
+
+    
+        
+        
+
+
+   
+
+  
+    console.log(data);
+    // console.log (products);
    
 
     
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
+            
             <h2>Carrito de Compras</h2>
-            <hr/>
-            {
+            
+            {data.carrito.length === 0 && <h3>No has comprado nada</h3>}
+            {data.carrito.length !== 0 &&  (
+            
                 data.carrito.map(item => 
-                <p> {item.titulo} - Cant: {item.cantidad}   
-                <a href="#" className="btn-danger"> X </a> </p>
+                    <>  
+                        {/* <img src={item.imagen} className="card-img-top" alt="imagen"/>   */}
+                        <p> {item.titulo} - Cant: {item.cantidad}   
+                            <button 
+                                href="#" 
+                                className="btn btn-danger btn-sm" 
+
+                                // onClick={ () => deleteFromCart(item.id) } 
+                                > 
+                            X </button> 
+                        </p>
+                    </>
                 
         
                 ) 
-            }
+                
+            )}
             
             
             
@@ -40,5 +65,6 @@ const WidgetCart = ({show, action}) => {
         </div>
     )
 }
+
 export default WidgetCart;
 

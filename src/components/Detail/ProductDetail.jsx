@@ -6,7 +6,8 @@ import {useHistory} from 'react-router-dom';
 const ProductDetail = ({item}) => {
     
     const [qty, setQty] = useState(1);
-    const [data, setData] = useContext(Store);
+    const store = useContext(Store);
+    const [data,setData] = store;
     const history = useHistory();	
 
     
@@ -22,7 +23,7 @@ const ProductDetail = ({item}) => {
 
         setData({
             ...data, 
-            carrito: [...data.carrito, {titulo: item.titulo, cantidad: qty, precio: item.precio}],
+            carrito: [...data.carrito, {id: item.id, titulo:  item.titulo, cantidad: qty, precio: item.precio, imagen:item.imagen}],
             cantidad: data.cantidad + qty,
             
             

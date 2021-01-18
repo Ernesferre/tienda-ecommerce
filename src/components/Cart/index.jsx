@@ -15,16 +15,19 @@ const Cart = () => {
     
     return (
         <>
-            <h1 className="text-center text-primary mt-2">Esta en el Cart</h1>
+            <h1 className="text-center text-primary mt-2">Estas en el Cart</h1>
             {
                data.carrito.map(item => 
+                <>
                 <h2 className="ml-5 mb-4 lead fontsize-6 text-success ">  
+
                     Art: <span> {item.titulo} </span>- 
                     Cant:  <span> {item.cantidad} </span>-
-                    Precio: $ <span> {item.precio} </span> 
-                    Total: 
+                    Precio: $ <span> {item.precio} </span>
+                    
                 </h2>
-                
+                <p></p>
+                </>   
                 
             )}
             <hr/>

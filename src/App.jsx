@@ -12,20 +12,15 @@ import Error404 from './components/general/Error404/index.jsx';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import Footer from './components/general/Footer'
-import {Store} from './store';
+
+import StoreProvider from './store';
 import { queryByTitle } from '@testing-library/react';
 
 
-function App() {
-  const [data, setData] = useState({
-    carrito: [],
-    cantidad: 0,
-      
-  })
+export default function App() {
 
-  return (
-    
-    <Store.Provider value={[data, setData]}>
+  return (  
+    <StoreProvider>
       <BrowserRouter>
         {/* El "NavAndWidgetCart" queda fijo en todo momemto */}
         <NavAndWidgetCart/>
@@ -65,13 +60,10 @@ function App() {
 
         <Footer />
       </BrowserRouter>
-    </Store.Provider>
+    </StoreProvider>
     
   );
     
   }
 
 
-
-
-export default App;
