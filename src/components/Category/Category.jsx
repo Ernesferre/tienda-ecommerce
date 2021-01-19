@@ -3,13 +3,15 @@ import {useParams} from 'react-router-dom';
 import { listaProductos } from "../Assets/productos";
 import ProductCard from '../general/ProductCard/ProductCard';
 import './Category.css';
+import {getFirestore} from '../../db';
 
 
 const Category = () => {
-    
-    const [product, setProduct] = useState();
-
     const {category_name} = useParams();
+    const [product, setProduct] = useState();
+    const db = getFirestore();
+
+
 
     const getProduct = new Promise ((resolve,reject) => {
         setTimeout (() => {

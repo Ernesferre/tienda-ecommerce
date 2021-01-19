@@ -1,31 +1,34 @@
 import {useState,useEffect} from "react";
-import { listaProductos } from "../../Assets/productos";
+// import { listaProductos } from "../../Assets/productos";
 import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
+import {getFirestore} from '../../../db';
+
 
 
 const FeaturedProducts = () => {
     
     const [items, setItems] = useState ([]);
+    const db = getFirestore();
 
 
-    const getProducts = new Promise ((resolve, reject) => {
-        const Prod_Destacados = listaProductos.filter(item => {
-            return item.destacado === true
-        });
-        setTimeout(() => {
-            resolve(Prod_Destacados);
-            
-        }, 0)
+ 
+
+const getProducstFromDB =  () => {
+    db.collection('productos').where("destacado","==",true).get()
+    .then(docs => {
+        let array = [];
+        docs.forEach(doc => {
+            array.push({id: doc.id, data: doc.data()})
+        })
+
+        console.log(array);
+
+        
+
+        setItems(array);
     })
-
-const getProducstFromDB = async () => {
-    try {
-        const result = await getProducts;
-        setItems(result);
-    } catch(error) {
-        alert("No podemos mostrar los productos en este momento");
-    }
+    .catch(e => console.log(e));   
 }
 
 
@@ -35,9 +38,7 @@ const getProducstFromDB = async () => {
 
     }, []);
 
-   
 
-console.log(items);
 
 
     
@@ -57,15 +58,14 @@ console.log(items);
                             <ul>
                                 {
                                     
-                                    items.map((item,index) => (
-                                        <li key={index}>
+                                    items.map((item) => (
+                                        <li key={item.id}>
                                             <ProductCard
-                                                imagen={item.imagen}
-                                                titulo={item.titulo}
-                                                descripcion={item.descripcion} 
-                                                precio={item.precio}
                                                 id={item.id}
-                                                
+                                                imagen={item.data.imagen}
+                                                titulo={item.data.titulo}
+                                                descripcion={item.data.descripcion} 
+                                                precio={item.data.precio}
                                             />
                                         </li>
                                     ))

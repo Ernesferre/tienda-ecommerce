@@ -11,7 +11,7 @@ const StoreProvider = ({children})=>{
 
     });
 
-    const [products, setProducts] = useState({});
+    const [products, setProducts] = useState([]);
 
     // const deleteFromCart = () => {
     //   console.log("HOLA");

@@ -5,24 +5,11 @@ import {Store} from '../../../store';
 import {Link} from 'react-router-dom';
 
 
-
-
 const WidgetCart = ({show, action}) => {
     const [data] = useContext(Store);
 
-    
-        
-        
-
-
-   
-
-  
     console.log(data);
-    // console.log (products);
-   
-
-    
+       
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
             
@@ -33,24 +20,17 @@ const WidgetCart = ({show, action}) => {
             
                 data.carrito.map(item => 
                     <>  
-                        {/* <img src={item.imagen} className="card-img-top" alt="imagen"/>   */}
                         <p> {item.titulo} - Cant: {item.cantidad}   
                             <button 
                                 href="#" 
-                                className="btn btn-danger btn-sm" 
-
-                                // onClick={ () => deleteFromCart(item.id) } 
+                                className="btn btn-danger" 
                                 > 
                             X </button> 
                         </p>
-                    </>
-                
-        
-                ) 
-                
+                    </>                
+                )                 
             )}
-            
-            
+                      
             
             <button className="btn btn-dark float-none"> Vaciar Carrito </button>
 
@@ -58,7 +38,7 @@ const WidgetCart = ({show, action}) => {
             
             <br/>
             <hr/>
-            <button className="btn btn-danger img-fluid" onClick={action}>Cerrar widget</button>
+            <button className="btn btn-danger img-fluid"  onClick={action}>Cerrar widget</button>
             
             
            
