@@ -49,7 +49,6 @@ const Category = () => {
                             />
                         </li>
                     ))
-                
                 }
 
             </ul>

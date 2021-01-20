@@ -9,7 +9,7 @@ const ProductCard = ({imagen,titulo,descripcion,precio,id}) => {
         <article className="productCard">
             
             <div>
-                <img src={imagen} alt="Mi producto de prueba"/>
+                <img src={`/products/${imagen}`}  alt="Mi producto de prueba"/>
 
                 
 
