@@ -5,47 +5,51 @@ import ProductCard from '../general/ProductCard/ProductCard';
 import './Category.css';
 import {getFirestore} from '../../db';
 
-
 const Category = () => {
     const {category_name} = useParams();
     const [product, setProduct] = useState();
     const db = getFirestore();
 
 
+useEffect (() => {
+    if (category_name) {
+        db.collection('productos').where("categoria","==",category_name).get()
+            .then(docs => {
+                let array = [];
+                    docs.forEach(doc => {
+                        array.push({id: doc.id, data: doc.data()})
+                    })
+                    
+                    console.log (array);
 
-    const getProduct = new Promise ((resolve,reject) => {
-        setTimeout (() => {
-          const CategoriaClickeada = listaProductos.filter ( product => {
-              return product.categoria === category_name
-          });
-
-          resolve (CategoriaClickeada);
-        //   console.log(CategoriaClickeada);
-        }, );
-    
-      });
-
-    
-      useEffect (() => {
-        getProduct.then(response => setProduct(response));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [category_name]);
+                    setProduct(array);
+            })
+    }
+},[category_name])
 
     
+
 
     return product ? (
         <div className="Category">
             <h2>{category_name}</h2>
             <ul> 
                 {
-                    product.map((prod,index) => (
-                        <li key={index}>
+                    product.map((product) => (
+                        <li key={product.id}>
                             <ProductCard
-                                titulo={prod.titulo}
-                                id={prod.id}
-                                imagen={prod.imagen}
-                                descripcion={prod.descripcion} 
-                                precio={prod.precio}
+
+                                    id={product.id}
+                                    imagen={product.data.imagen}
+                                    
+                                    titulo={product.data.titulo}
+                                    descriction={product.data.descriction} 
+                                    precio={product.data.precio}
+                                // titulo={prod.titulo}
+                                // id={prod.id}
+                                // imagen={prod.imagen}
+                                // descripcion={prod.descripcion} 
+                                // precio={prod.precio}
                             />
                         </li>
                     ))
@@ -58,7 +62,7 @@ const Category = () => {
     <p>Cargando producto...</p>
           
       
-    
-}
+}    
+
 
 export default Category;

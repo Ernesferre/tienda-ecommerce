@@ -43,9 +43,9 @@ const ProductDetail = ({item}) => {
             <div className="info">
                 <h1 className="title">{item.titulo}</h1>
                 {
-                    !!item.description && <p className="description">{item.descripcion}</p>
+                    !!item.description && <p className="description">{item.descriction}</p>
                 }
-                <p className="descripcion"> {item.descripcion}</p>
+                <p className="descripcion"> {item.descriction}</p>
                 <p className="price">${item.precio}</p>
                 <div className="qty">	
                     <button 	

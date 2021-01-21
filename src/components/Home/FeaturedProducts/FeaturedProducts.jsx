@@ -64,7 +64,7 @@ const getProducstFromDB =  () => {
                                                 id={item.id}
                                                 imagen={item.data.imagen}
                                                 titulo={item.data.titulo}
-                                                descripcion={item.data.descripcion} 
+                                                descriction={item.data.descriction} 
                                                 precio={item.data.precio}
                                             />
                                         </li>

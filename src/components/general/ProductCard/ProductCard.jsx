@@ -3,7 +3,7 @@ import './ProductCard.css';
 import {Link} from 'react-router-dom';
 // import { listaProductos } from "../../Assets/productos";
 
-const ProductCard = ({imagen,titulo,descripcion,precio,id}) => {
+const ProductCard = ({imagen,titulo,descriction,precio,id}) => {
     return (
         
         <article className="productCard">
@@ -15,7 +15,7 @@ const ProductCard = ({imagen,titulo,descripcion,precio,id}) => {
 
                 <hr/>
                 <h3>{titulo}</h3>
-                <p>{descripcion}</p>
+                {/* <p>{descriction}</p> */}
                 <span> $ {precio} </span>
                 <hr/>
                 {/* <StateCounter/>  */}
