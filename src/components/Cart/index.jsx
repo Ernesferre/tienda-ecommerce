@@ -24,6 +24,7 @@ const Cart = () => {
                     Art: <span> {item.titulo} </span>- 
                     Cant:  <span> {item.cantidad} </span>-
                     Precio: $ <span> {item.precio} </span>
+                    Precio total: <strong>${item.precio * item.cantidad}</strong>
                     
                 </h2>
                 <p></p>
@@ -32,7 +33,8 @@ const Cart = () => {
             )}
             <hr/>
             
-            <Link to={`/`} className="btn btn-warning mb-4 ml-5" activeClassName="active">Volver a Home</Link>
+            {/* <Link to="/checkout">Finalizar compra</Link> */}
+            <Link to={`/Checkout`} className="btn btn-warning mb-4 ml-5" activeClassName="active">Finalizar Compra</Link>
         </>
     )
 }

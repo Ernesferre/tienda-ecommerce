@@ -11,7 +11,8 @@
 
 .productCard:hover {
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
-  background-color: khaki;
+  background-color:khaki;
+  /* color: white; */
   size: 5rem;
   
  
@@ -22,6 +23,7 @@ div h3 p:hover  {
   font-size: 5rem;
   font-weight: bold;
   border-style: unset;
+  color: white;
 }
 
 .productCard img {

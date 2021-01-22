@@ -12,9 +12,8 @@ import Error404 from './components/general/Error404/index.jsx';
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import Footer from './components/general/Footer'
-
 import StoreProvider from './store';
-import { queryByTitle } from '@testing-library/react';
+
 
 
 export default function App() {
@@ -28,6 +27,14 @@ export default function App() {
         <Switch>
         <Route exact path="/" >
             <Home/>
+          </Route>
+
+          <Route path="/Cart">
+            <Cart />
+          </Route>
+
+          <Route path="/Checkout">
+            <Checkout />
           </Route>
 
           <Route path="/Category/:category_name?">

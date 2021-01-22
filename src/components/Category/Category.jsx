@@ -45,11 +45,7 @@ useEffect (() => {
                                     titulo={product.data.titulo}
                                     descriction={product.data.descriction} 
                                     precio={product.data.precio}
-                                // titulo={prod.titulo}
-                                // id={prod.id}
-                                // imagen={prod.imagen}
-                                // descripcion={prod.descripcion} 
-                                // precio={prod.precio}
+                            
                             />
                         </li>
                     ))

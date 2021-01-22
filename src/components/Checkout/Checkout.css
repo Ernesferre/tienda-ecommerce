@@ -1,0 +1,35 @@
+.checkout {
+  padding: 2rem 0;
+}
+
+.checkout form input {
+  width: 100%;
+  border: 1px solid black;
+}
+
+
+
+.checkout form ::placeholder {
+  text-align: left;
+  color: red;
+}
+
+.checkout h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--color-secundario);
+}
+
+.checkout form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+
+.checkout form input,
+.checkout form button {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
