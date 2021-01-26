@@ -25,10 +25,13 @@ const ProductDetail = ({item}) => {
             ...data, 
             carrito: [...data.carrito, {id: item.id, titulo:  item.titulo, cantidad: qty, precio: item.precio, imagen:item.imagen}],
             cantidad: data.cantidad + qty,
+            precioTotal: data.precioTotal + (item.precio*qty),
             
             
             
         });
+
+        console.log(data);
 
     
         history.push('/cart');

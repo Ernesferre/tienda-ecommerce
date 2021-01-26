@@ -1,6 +1,6 @@
 
 import {createContext, useEffect, useState} from 'react';
-import {listaProductos}  from '../components/Assets/productos';
+// import {listaProductos}  from '../components/Assets/productos';
 export const Store = createContext();
 
 const StoreProvider = ({children})=>{
@@ -8,6 +8,7 @@ const StoreProvider = ({children})=>{
     const [data, setData] = useState ({
         carrito: [],
         cantidad: 0,
+        precioTotal: 0
 
     });
 
@@ -19,14 +20,14 @@ const StoreProvider = ({children})=>{
     //   // console.log(prodFueradelCart);
     // }
 
+    
 
-    useEffect( () => {
-      setProducts(listaProductos);
-      console.log(products);
-      console.log(data);
-    }
 
-    )
+    // useEffect( () => {
+    //   console.log(data);
+    // }
+
+    // )
 
 
   return(
@@ -36,6 +37,8 @@ const StoreProvider = ({children})=>{
         setData,
         products,
         setProducts,
+        // deleteFromCart
+      
       
       ]}
     >

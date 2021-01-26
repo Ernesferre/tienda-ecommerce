@@ -16,18 +16,14 @@ const Checkout = () => {
     })
     const [idCompra, setIdCompra]= useState('');
 
-    // console.log(data);
-
     const handleChangeInput = (e) => {
         setFormData ({...formData, [e.target.name]: e.target.value});
     } 
 
-    // console.log(formData)
-
     const compra = {
         user: formData,
-        items: data.items,
-        totalPrice: data.precioTotal,
+        items: data.carrito,
+        // totalPrice: data.precioTotal,
         date: firebase.firestore.Timestamp.fromDate(new Date()),
     }
 
@@ -36,7 +32,8 @@ const Checkout = () => {
 
         db.collection('ventas').add(compra)
         .then(({id}) => {
-           console.log(id);
+            completoVenta(true);
+            setIdCompra(id);
         })
         .catch (e => console.log(e));
     }
@@ -46,6 +43,8 @@ const Checkout = () => {
         <section className="checkout">
             <div className="container">
                 <h2>Checkout</h2>
+                {
+                    !venta ?
                 
 
 
@@ -57,7 +56,9 @@ const Checkout = () => {
                     <input type="tel" value={formData.tel} onChange={handleChangeInput} name="tel" placeholder="Teléfono" />
                     
                     <button className="btn btn-primary">Pagar</button>
-                </form>
+                </form>:
+                <p>La Compra fue efectuada correctamente. Conserva este numero de seguimiento: {idCompra} </p>
+                }
             </div>
         </section>
     )
