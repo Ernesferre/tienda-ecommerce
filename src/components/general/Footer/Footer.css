@@ -1,10 +1,10 @@
 footer {
-  background:tomato;
+  background:black;
   padding: 1rem 0;
 }
 
 footer p {
-  color: var(--blanco);
+  color:#FFDB5C;
   text-align: center;
   font-size: 1.5rem;
 }

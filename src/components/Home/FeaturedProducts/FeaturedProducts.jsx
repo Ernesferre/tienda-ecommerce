@@ -3,6 +3,7 @@ import {useState,useEffect} from "react";
 import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
 import {getFirestore} from '../../../db';
+// import portada from '../../../../public/products/bateria4.jpg';
 
 
 
@@ -53,6 +54,7 @@ const getProducstFromDB =  () => {
                     items.length ?
                         <>
                             <h2>Alguno de Nuestros Productos</h2>
+                            {/* <img src={bateria4.jpg}/> */}
                             
 
                             <ul>

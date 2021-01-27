@@ -3,7 +3,7 @@ import './ProductCard.css';
 import {Link} from 'react-router-dom';
 // import { listaProductos } from "../../Assets/productos";
 
-const ProductCard = ({imagen,titulo,descriction,precio,id}) => {
+const ProductCard = ({imagen,titulo,precio,id}) => {
     return (
         
         <article className="productCard">
@@ -19,7 +19,9 @@ const ProductCard = ({imagen,titulo,descriction,precio,id}) => {
                 <span> $ {precio} </span>
                 <hr/>
                 {/* <StateCounter/>  */}
-                <Link to={`/detail/${id}`} className="btn btn-warning" activeClassName="active">Ver mas</Link>
+                <div className="Link">
+                    <Link to={`/detail/${id}`} className="btn" activeClassName="active">Ver mas</Link>
+                </div>
             </div>
 
         </article>

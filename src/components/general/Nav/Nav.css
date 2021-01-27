@@ -1,5 +1,5 @@
 nav {
-  background:tomato;
+  background:black;
   /* padding: 2rem; */
 }
 
@@ -13,7 +13,7 @@ nav .container {
 
 nav h1 a {
   font-family: 'Permanent Marker', cursive;
-  color:white;
+  color:#FFDB5C;
   font-size: 4rem;
   letter-spacing: -0.5px;
   margin-bottom: 2rem;
@@ -23,7 +23,7 @@ nav h1 a {
 nav h1 a:hover {
   text-decoration: none;
   font-size: 5rem;
-  color: black;
+  color:#FFDB5C;
 }
 
 nav ul {
@@ -63,7 +63,7 @@ nav ul li a::after {
   display: block;
   width: 100%;
   height: 0.2rem;
-  background: var(--blanco);
+  background: #FFDB5C;
   position: absolute;
   bottom: -0.5rem;
   opacity: 0;

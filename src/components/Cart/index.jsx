@@ -2,10 +2,12 @@
 import {useContext} from 'react';
 import {Store} from '../../store';
 import {Link} from 'react-router-dom';
+import './index.css';
 
-const Cart = ({nombre,precio,id,item}) => {
+const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
 
-    const [data, setData] = useContext(Store);
+    const store = useContext(Store);
+    const [data,setData] = store;
     
 
 
@@ -34,38 +36,66 @@ const Cart = ({nombre,precio,id,item}) => {
     return (
         <>
             
-            <h1 className="text-center text-primary mt-2">Estas en el Cart</h1>
+            <h1 className="text-center mt-4 mb-3">Resumen de Compra</h1>
             {
                data.carrito.map(item => 
+                
                 <>
-                <h2 className="ml-5 mb-4 lead fontsize-6 text-success ">  
-
-                    Art: <span> {item.titulo} </span>- 
-                    Cant:  <span> {item.cantidad} </span>-
-                    Precio: $ <span> {item.precio} </span>
-                    Precio total: <strong>${item.precio * item.cantidad}</strong>
-                
-                    <button 
-                        href="#" 
-                        className="btn btn-danger" 
-                        onClick={() => deleteFromCart (item.id)}
-                        > X   
-                    </button> 
+                <table className="table ml-5 mb-4 mt-5 lead fontsize-6 text-center">  
                     
-                </h2>
+                        {/* <thead>
+                            <tr>
+                                <th>imagen</th>
+                                <th>Articulo</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Precio Total</th>
+                                <th></th>
+                            </tr>
+                        </thead> */}
+                        
+                    
+                    
+
+                    <tr>
+
+                        <td><img src={`/products/${item.imagen}`} alt=""></img></td>
+                        <td>{item.titulo}</td>
+                        <td>{item.cantidad}</td>
+                        <td>$ {item.precio}</td>
+                        <td>$ {item.precio * item.cantidad}</td>
+
+                        <td>
+                    
+                            <button 
+                                href="#" 
+                                className="btn btn-danger" 
+                                onClick={() => deleteFromCart (item.id)}
+                                > X   
+                            </button>
+
+                        </td> 
+
+                    </tr>
+
+                    
+                    
+
+                </table>
                 
 
-                
 
                 </>,
                 
                
                 
             )}
-            <hr/>
+            
             
             <h3> Precio Final $ {data.precioTotal}</h3>
-            <Link to={`/Checkout`} className="btn btn-warning mb-4 ml-5" activeClassName="active">Finalizar Compra</Link>
+            <div className="link">
+                <Link to={`/Checkout`} className="btn btn-warning mb-4 ml-5 text-center" activeClassName="active">Finalizar Compra</Link>
+            </div>    
         </>
     )
 }
