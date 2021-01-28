@@ -13,8 +13,50 @@ const ProductDetail = ({item}) => {
     const incrementar = () => setQty(qty + 1);
     const decrementar = () => setQty(qty - 1);
 
-    
-    
+//----------- OPCION MAURORAMBO -------------------------------------------------------------------
+
+// const onAdd = (item) => {
+//     data.carrito.filter((prod) => prod.producto.id === item.id).length === 0
+//       ? isNotInCart(item)
+//       : isInCart(item);  
+//   };
+
+//   const isNotInCart = (item)=>{
+//     setData({
+//       ...data,
+//       carrito: [
+//         ...data.carrito,
+//         { producto: item, cantidad: data.cantidadAgregar }
+//       ],
+//       cantidad: data.cantidad + data.cantidadAgregar,
+//       precioTotal:data.precioTotal+(item.precio*data.cantidadAgregar)
+//     })
+//   }
+
+//   const isInCart = (item) => {
+//     const index = data.carrito.findIndex(
+//       (find) => find.producto.id === item.id
+//     );
+//     const arr = data.carrito;
+//     arr[index] = {
+//       ...arr[index],
+//       cantidad: arr[index].cantidad + data.cantidadAgregar
+//     };
+//     setData({
+//       ...data,
+//       carrito: arr,
+//       cantidad: data.cantidad + data.cantidadAgregar,
+//       precioTotal:data.precioTotal+(item.precio*data.cantidadAgregar)
+//     });
+//   };
+
+
+
+
+
+
+// ----------- OPCION LEMI -----------------------------------------------------  
+
     // const handleClickResta = () => {	
     //     if(qty > 1) {	
     //         setQty(qty - 1);	
@@ -35,13 +77,22 @@ const ProductDetail = ({item}) => {
                 return producto;
             }
           });
-            data.carrito = [...productosCarrito]
+           setData({
+               carrito: [...productosCarrito],
+               cantidad: data.cantidad + qty,
+                precioTotal: data.precioTotal + (item.precio * qty)
+
+           })
+
+
+            // data.carrito = [...productosCarrito]
+        
             // console.log(productosCarrito),
             history.push("/cart");
 
         } else {
             item.cantidad = qty;
-            setData({ 
+            setData({ ...data,
                 carrito: [...data.carrito, item],
                 cantidad: data.cantidad + qty,
                 precioTotal: data.precioTotal + (item.precio * qty)
@@ -53,7 +104,7 @@ const ProductDetail = ({item}) => {
             history.push("/cart");
       }
 
-
+// ---------- OPCION DAIANA - Sex Shopp -------------------------------------------------------------
 
     // const onAdd = (id) => {
     //     const Existe = data.carrito.some((prod) => prod.id === id);
@@ -104,19 +155,20 @@ const ProductDetail = ({item}) => {
     return (
         <article className="product">
             <div className="foto">
-            <img src={`/products/${item.imagen}`} alt="" />
+                <img src={`/products/${item.imagen}`} alt="" />
             </div>
+            
             <div className="info">
                 <h1 className="title">{item.titulo}</h1>
-                {
-                    !!item.description && <p className="description">{item.descriction}</p>
-                }
+                    {
+                        !!item.description && <p className="description">{item.descriction}</p>
+                    }
                 <p className="descripcion"> {item.descriction}</p>
                 <p className="price">${item.precio}</p>
-                <div className="qty">
-                    <button shape="circle" onClick={decrementar} disabled={qty <= 1 ? true : null }  icon={<MinusOutlined />} />
-                    <p className="counter-container_count">{qty}</p>
-                    <button shape="circle" onClick={incrementar}  disabled= {qty === item.stock ? true : null } icon={<PlusOutlined />} />	
+                <div className="qty contenedor d-flex justify-content-around">
+                    <button text="-" onClick={decrementar} disabled={qty <= 1 ? true : null }  icon={<MinusOutlined />} placeholder="-"  />
+                    <p className="counter-container_count mt-1 strong">{qty}</p>
+                    <button shape="circle" onClick={incrementar}  disabled= {qty === item.stock ? true : null } icon={<PlusOutlined />} value="+" />	
                     {/* <button 	
                         disabled={qty === 1 ? 'disabled' : null } 	
                         onClick={handleClickResta}	
@@ -125,10 +177,10 @@ const ProductDetail = ({item}) => {
                     </button>	
                     <input type="text" value={qty} readOnly/>	
                     <button onClick={() => setQty(qty + 1)}>+</button>	 */}
-
-
                 </div>
-                <button className="btn" onClick={onAdd} >Agregar al carrito</button>
+                
+                <button className="btn" onClick={onAdd}>Agregar al carrito</button>
+            
             </div>
         </article>
     )

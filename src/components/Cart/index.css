@@ -7,15 +7,27 @@
   background: #e5e5e5;
 } */
 
+.cart h1 {
+  font-size: 3rem;
+  color: black;
+  
+}
+
 h3 {
   text-align: center;
 }
 
 .link div {
   text-align: center;
+  font-weight: bold;
  
 }
 
 img {
   width: 70px;
 }
+
+td {
+  font-size: 25px;
+}
+

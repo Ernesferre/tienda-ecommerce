@@ -32,7 +32,7 @@ input {
 .qty {
   width: 150px;
   margin-bottom: 3rem;
-  display: block;
+  /* display: block; */
   margin-left: 18rem;
 
 }

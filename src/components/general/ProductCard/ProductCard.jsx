@@ -13,7 +13,7 @@ const ProductCard = ({imagen,titulo,precio,id}) => {
 
                 
 
-                <hr/>
+                <br/>
                 <h3>{titulo}</h3>
                 {/* <p>{descriction}</p> */}
                 <span> $ {precio} </span>

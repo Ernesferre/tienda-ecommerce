@@ -3,6 +3,7 @@ import {useContext} from 'react';
 import {Store} from '../../store';
 import {Link} from 'react-router-dom';
 import './index.css';
+// import CartCounter from "../CartCounter/CartCounter"
 
 const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
 
@@ -18,8 +19,6 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
         const EliminarProd = data.carrito.filter((prod) => prod.id !== id);
       
         
-    
-
     setData({
         ...data,
         carrito: EliminarProd,
@@ -28,13 +27,22 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
     
     });
 
-    console.log(data);
+    
+
+    // const vaciarCarrito = () => {
+    //     setData({
+    //         carrito: [],
+    //         cantidad: 0,
+    //         precioTotal: 0
+
+    //     })
+    // };
 }
 
 // -------------------------------------------------------------------------------------------
     
     return (
-        <>
+        <div className="cart container">
             
             <h1 className="text-center mt-4 mb-3">Resumen de Compra</h1>
             {
@@ -59,7 +67,7 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
 
                     <tr>
 
-                        <td><img src={`/products/${item.imagen}`} alt=""></img></td>
+                        <td><img src={`/products/${item.imagen}`}></img></td>
                         <td>{item.titulo}</td>
                         <td>{item.cantidad}</td>
                         <td>$ {item.precio}</td>
@@ -71,7 +79,7 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
                                 href="#" 
                                 className="btn btn-danger" 
                                 onClick={() => deleteFromCart (item.id)}
-                                > X   
+                                > Eliminar Articulo   
                             </button>
 
                         </td> 
@@ -93,11 +101,16 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
             
             
             <h3> Precio Final $ {data.precioTotal}</h3>
-            <div className="link">
-                <Link to={`/Checkout`} className="btn btn-warning mb-4 ml-5 text-center" activeClassName="active">Finalizar Compra</Link>
+            
+            <div className="link d-flex justify-content-center mt-3 mb-3">
+
+                <Link to={`/Checkout`} className="btn btn-warning btn-block mb-4 ml-5 text-center" activeClassName="active">Finalizar Compra</Link>
+                <button className="btn btn-danger" >Vaciar Carrito</button>
             </div>    
-        </>
+        </div>
     )
 }
 export default Cart;
 
+
+// onClick={() => vaciarCarrito ()}

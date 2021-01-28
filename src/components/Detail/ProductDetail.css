@@ -20,7 +20,7 @@
     }
     
     .product .info .description {
-      font-size: 3rem;
+      font-size: 1rem;
       color: var(--text);
       margin-bottom: 2rem;
     }
@@ -66,8 +66,8 @@
     }
     
     .product .btn {
-      width: 150px;
-      display: block;
+      width: 200px;
+      /* display: block; */
       border: none;
       padding: 1rem;
       outline: none;
