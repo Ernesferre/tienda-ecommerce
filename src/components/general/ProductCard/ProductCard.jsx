@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const ProductCard = ({imagen,titulo,precio,id}) => {
     return (
         
-        <article className="productCard">
+        <article className="productCard ">
             
             <div>
                 <img src={`/products/${imagen}`}  alt="Mi producto de prueba"/>
@@ -14,13 +14,13 @@ const ProductCard = ({imagen,titulo,precio,id}) => {
                 
 
                 <br/>
-                <h3>{titulo}</h3>
+                <h4 className="mt-2">{titulo}</h4>
                 {/* <p>{descriction}</p> */}
                 <span> $ {precio} </span>
-                <hr/>
+               <br/>
                 {/* <StateCounter/>  */}
                 <div className="Link">
-                    <Link to={`/detail/${id}`} className="btn" activeClassName="active">Ver mas</Link>
+                    <Link to={`/detail/${id}`} className="btn btn-warning text-center " activeClassName="active">Ver mas</Link>
                 </div>
             </div>
 

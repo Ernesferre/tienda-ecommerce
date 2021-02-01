@@ -11,25 +11,24 @@
 
 .productCard:hover {
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
-  background-color:#FFDB5C;
-  /* color: white; */
+  background-color:black;
+
+  color: #FFDB5C;
   size: 5rem;
   
  
   
 }
 
-div h3 p:hover  {
+/* div h3 p:hover  {
   font-size: 5rem;
   font-weight: bold;
   border-style: unset;
   color: white;
-}
+} */
 
 .productCard img {
   width: 100%;
-  /* border-top-left-radius: 5rem;
-  border-top-right-radius: 1.5rem; */
   border-radius: 3rem;
 }
 
@@ -56,13 +55,14 @@ span {
 }
 
 .productCard a {
-  color:black;
-  background-color:#FFDB5C;
+  color:#FFDB5C;
+  background-color:black;
   
 }
 
 .productCard a:hover {
-  color:#FFDB5C;
-  background-color: black;
-  font-size:large;
+  color:black;
+  background-color:#FFDB5C;
+  /* font-size:large; */
+  
 }

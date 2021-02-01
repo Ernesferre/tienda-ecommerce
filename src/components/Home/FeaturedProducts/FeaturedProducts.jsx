@@ -53,7 +53,7 @@ const getProducstFromDB =  () => {
                 {
                     items.length ?
                         <>
-                            <h2>Alguno de Nuestros Productos</h2>
+                            <h2>Productos Destacados</h2>
                             {/* <img src={bateria4.jpg}/> */}
                             
 

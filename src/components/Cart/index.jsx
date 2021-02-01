@@ -3,7 +3,8 @@ import {useContext} from 'react';
 import {Store} from '../../store';
 import {Link} from 'react-router-dom';
 import './index.css';
-// import CartCounter from "../CartCounter/CartCounter"
+
+
 
 const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
 
@@ -22,10 +23,19 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
     setData({
         ...data,
         carrito: EliminarProd,
-        cantidad: data.cantidad - EliminarProd.cantidad,
+        cantidad: data.cantidad - ProdRetirado.cantidad,
         precioTotal: data.precioTotal - (ProdRetirado.precio*ProdRetirado.cantidad)
     
     });
+
+    const vaciarCarrito = () => {
+        setData({
+            carrito: [],
+            cantidad: 0,
+            precioTotal:0
+        })}
+    
+
 
     
 
@@ -45,7 +55,20 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
         <div className="cart container">
             
             <h1 className="text-center mt-4 mb-3">Resumen de Compra</h1>
+            
             {
+                data.carrito.length === 0 && 
+                <>
+                <h3 className="mt-5">Carrito Vacio</h3>
+                <Link to={`/`} className="btn btn-outline-dark mb-5">Volver a Home</Link>
+                </>
+            }
+            
+            
+            {data.carrito.length !== 0 &&  (
+
+            
+            
                data.carrito.map(item => 
                 
                 <>
@@ -60,7 +83,7 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
                                 <th>Precio Total</th>
                                 <th></th>
                             </tr>
-                        </thead> */}
+                        </thead>  */}
                         
                     
                     
@@ -71,7 +94,7 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
                         <td>{item.titulo}</td>
                         <td>{item.cantidad}</td>
                         <td>$ {item.precio}</td>
-                        <td>$ {item.precio * item.cantidad}</td>
+                        <td className="mr-auto">$ {item.precio * item.cantidad}</td>
 
                         <td>
                     
@@ -79,34 +102,45 @@ const Cart = ({nombre,precio,id,item,imagen, cantidad}) => {
                                 href="#" 
                                 className="btn btn-danger" 
                                 onClick={() => deleteFromCart (item.id)}
-                                > Eliminar Articulo   
+                                > Eliminar del Carrito   
                             </button>
 
                         </td> 
 
                     </tr>
 
-                    
-                    
-
                 </table>
                 
+                </>,                      
+               )
+               )}
 
+               {data.precioTotal !== 0 && (
 
-                </>,
+            
+                    <h3 className="display-5"> Valor Final de Compra $ {data.precioTotal}</h3>
+
+               )}
+            
+            
+           
+            <hr/>
+
+            {data.carrito.length !== 0 &&  (
+
                 
-               
-                
+            
+                <div className="link d-flex justify-content-center mt-3 mb-3">
+
+                    <Link to={`/Checkout`} className="btn btn-warning btn-lg ml-5 text-center p-3 mb-3"  activeClassName="active">Avanzar con Compra</Link>
+                    {/* <button className="btn btn-danger" onClick={() => vaciarCarrito ()}>Vaciar Carrito</button> */}
+
+                </div>
+
             )}
-            
-            
-            <h3> Precio Final $ {data.precioTotal}</h3>
-            
-            <div className="link d-flex justify-content-center mt-3 mb-3">
 
-                <Link to={`/Checkout`} className="btn btn-warning btn-block mb-4 ml-5 text-center" activeClassName="active">Finalizar Compra</Link>
-                <button className="btn btn-danger" >Vaciar Carrito</button>
-            </div>    
+
+
         </div>
     )
 }

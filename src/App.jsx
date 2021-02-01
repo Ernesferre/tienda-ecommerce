@@ -10,7 +10,7 @@ import Detail from './components/Detail';
 import {BrowserRouter,Switch,Route} from "react-router-dom"; //Dependencia que me permite generar rutas 
 import Error404 from './components/general/Error404/index.jsx';
 import Cart from './components/Cart'
-// import Carrousel from './components/Carrousel/Carrousel'
+// import HomeCarrousel from './components/HomeCarrousel/HomeCarrousel';
 import Checkout from './components/Checkout'
 import Footer from './components/general/Footer'
 import StoreProvider from './store';
@@ -24,7 +24,7 @@ export default function App() {
       <BrowserRouter>
         {/* El "NavAndWidgetCart" queda fijo en todo momemto */}
         <NavAndWidgetCart/>
-        {/* <Carrousel/> */}
+        {/* <HomeCarrousel/> */}
         
         <Switch>
         <Route exact path="/" >

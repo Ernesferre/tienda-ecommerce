@@ -4,7 +4,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background:rgb(155, 98, 55);
+    background:#FFDB5C;
     z-index: 2;
     box-shadow: -0.3rem 0 0.3rem rgba(0, 0, 0, 0.2);
   }
@@ -25,5 +25,53 @@
     color: white;
     font-weight: bold;
   }
+
+  
+
+  .widgetCart a {
+    color: red;
+    position:static;
+    background-color: #FFDB5C;
+    width: 80%;
+    margin-left: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .widgetCart .Salir {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem ;
+    top: -0.5rem;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    
+    
+  }
+
+  .widgetCart .card {
+    background-color: black;
+    border-radius: 2rem;
+   
+  }
+
+  /* .navCart span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    background:#FFDB5C ;
+    line-height: 0;
+    color: black;
+  } */
 
 

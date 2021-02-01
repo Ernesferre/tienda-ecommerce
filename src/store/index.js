@@ -3,7 +3,10 @@ import {createContext, useEffect, useState} from 'react';
 // import {listaProductos}  from '../components/Assets/productos';
 export const Store = createContext();
 
+
 const StoreProvider = ({children})=>{
+
+  // const wss = window.sessionStorage;
 
     const [data, setData] = useState ({
         carrito: [],
