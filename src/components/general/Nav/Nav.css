@@ -1,6 +1,5 @@
 nav {
   background:black;
-  /* padding: 2rem; */
 }
 
 nav .container {
@@ -16,7 +15,7 @@ nav h1 a {
   color:#FFDB5C;
   font-size: 4rem;
   letter-spacing: -0.5px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: 900;
 }
 
@@ -34,14 +33,13 @@ nav ul li {
   margin: 0 4rem;
   list-style: none;
   margin-top: 2rem;
-  margin-bottom: -1rem;
+  margin-bottom: -2rem;
 }
 
 nav ul li :hover{
   color: powderblue;
   text-decoration: none;
-  font-size: 1.5rem;
-  
+  font-size: 1.5rem;  
 }
 
 nav ul li:first-child {

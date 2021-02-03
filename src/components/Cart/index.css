@@ -1,36 +1,44 @@
-/* table {
-  width: 1200px;
-  text-align: center;
-} */
-
-/* tr:hover {
-  background: #e5e5e5;
-} */
 
 .cart h1 {
   font-size: 3rem;
   color: black;
-  
+  font-family: 'Permanent Marker', cursive;  
+  margin-bottom: -1rem;
 }
 
-h3 {
+.cart h3 {
   text-align: center;
+  font-weight: lighter;
 }
 
 .cart a {
   text-align: center;
-  font-weight: bold;
-  background-color: black;
-  border-radius: 2rem;
-  color: #FFDB5C;
- 
+  color: black;
 }
 
 img {
-  width: 70px;
+  width: 60px;
 }
 
 td {
   font-size: 25px;
 }
 
+.cart button  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 50%;
+  height: 30px;
+  width: 2rem;
+  bottom: 60px;
+  right: 60px;
+  margin-top: 5px;
+}
+
+.cart button:hover {
+  font-size: 1.5rem;
+  bottom: 80px;
+  right: 80px;
+}

@@ -1,3 +1,23 @@
+# Proyecto Final para CoderHouse con React.
+
+Creado con [Create React App](https://github.com/facebook/create-react-app).
+
+E-commerce para Tienda Musikal
+
+Hosting Firebase:
+
+React js.\
+React Router.\
+Hooks.\
+Context Api.\
+Firebase Firestore.\
+Firebase Auth/Login.\
+FirebaseUI.\
+Firebase Hosting.\
+Dynamic Categories.\
+Cart Persistent.\
+Order Id with Firestore.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

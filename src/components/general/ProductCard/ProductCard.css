@@ -1,12 +1,9 @@
 .productCard {
-  /* background:cadetblue; */
-  /* border-radius: 0rem; */
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: box-shadow 0.5s;
   margin: 1rem;
-  /* border-style: solid; */
-  border-radius: 3rem;
+  border-radius: 4rem;
 }
 
 .productCard:hover {
@@ -15,17 +12,9 @@
 
   color: #FFDB5C;
   size: 5rem;
-  
- 
-  
 }
 
-/* div h3 p:hover  {
-  font-size: 5rem;
-  font-weight: bold;
-  border-style: unset;
-  color: white;
-} */
+
 
 .productCard img {
   width: 100%;
@@ -50,19 +39,17 @@
 }
 
 span {
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 
 .productCard a {
   color:#FFDB5C;
   background-color:black;
-  
+  border-radius: 1rem;
+  width: 80%;  
 }
 
 .productCard a:hover {
   color:black;
   background-color:#FFDB5C;
-  /* font-size:large; */
-  
 }

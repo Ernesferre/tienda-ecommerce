@@ -9,11 +9,9 @@ header {
 
 header h1 {
         color: yellow;
-        /* color: var(--blanco); */
         font-size: 3rem;
         letter-spacing: 0.5rem;
         margin-bottom: 0.9rem;
-        /* font-weight: 900; */
 
 }
 

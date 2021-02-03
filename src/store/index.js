@@ -1,36 +1,28 @@
 
 import {createContext, useEffect, useState} from 'react';
-// import {listaProductos}  from '../components/Assets/productos';
 export const Store = createContext();
 
 
 const StoreProvider = ({children})=>{
 
-  // const wss = window.sessionStorage;
+  const wss = window.sessionStorage;
 
     const [data, setData] = useState ({
-        carrito: [],
-        cantidad: 0,
-        precioTotal: 0
-
+      carrito: JSON.parse(wss.getItem('carrito'))||[],
+      cantidad: parseInt(wss.getItem('cantidad'))||0,
+      precioTotal: parseInt(wss.getItem('precioTotal'))||0
     });
 
     const [products, setProducts] = useState([]);
 
-    // const deleteFromCart = () => {
-    //   console.log("HOLA");
-    //   // const prodFueradelCart = products.filter(prod => prod.id === productId)
-    //   // console.log(prodFueradelCart);
-    // }
+  
 
-    
-
-
-    // useEffect( () => {
-    //   console.log(data);
-    // }
-
-    // )
+    useEffect(()=>{
+      window.sessionStorage.setItem('cantidad',data.cantidad);
+      window.sessionStorage.setItem('carrito',JSON.stringify(data.carrito));
+      window.sessionStorage.setItem('precioTotal',JSON.stringify(data.precioTotal));
+      // eslint-disable-next-line
+    },[data])
 
 
   return(
@@ -40,9 +32,6 @@ const StoreProvider = ({children})=>{
         setData,
         products,
         setProducts,
-        // deleteFromCart
-      
-      
       ]}
     >
       {children}

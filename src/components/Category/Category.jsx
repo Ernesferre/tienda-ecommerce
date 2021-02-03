@@ -1,6 +1,5 @@
 import {useEffect,useState} from 'react';
 import {useParams} from 'react-router-dom';
-import { listaProductos } from "../Assets/productos";
 import ProductCard from '../general/ProductCard/ProductCard';
 import './Category.css';
 import {getFirestore} from '../../db';
@@ -11,41 +10,37 @@ const Category = () => {
     const db = getFirestore();
 
 
-useEffect (() => {
-    if (category_name) {
-        db.collection('productos').where("categoria","==",category_name).get()
-            .then(docs => {
-                let array = [];
-                    docs.forEach(doc => {
-                        array.push({id: doc.id, data: doc.data()})
-                    })
-                    
-                    console.log (array);
-
-                    setProduct(array);
+    useEffect (() => {
+        if (category_name) {
+            db.collection('productos').where("categoria","==",category_name).get()
+                .then(docs => {
+                    let array = [];
+                        docs.forEach(doc => {
+                            array.push({id: doc.id, data: doc.data()})
+                        })
+                        setProduct(array);
             })
-    }
-},[category_name])
-
-    
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[category_name])
 
 
     return product ? (
+        
         <div className="Category">
+            
             <h2>{category_name}</h2>
             <ul> 
                 {
                     product.map((product) => (
                         <li key={product.id}>
                             <ProductCard
-
                                     id={product.id}
-                                    imagen={product.data.imagen}
-                                    
+                                    imagen={product.data.imagen}    
                                     titulo={product.data.titulo}
                                     descriction={product.data.descriction} 
                                     precio={product.data.precio}
-                            
+                                
                             />
                         </li>
                     ))
@@ -54,11 +49,9 @@ useEffect (() => {
             </ul>
         </div>
     ):
-                             
+                                
     <p>Cargando producto...</p>
           
-      
 }    
-
 
 export default Category;

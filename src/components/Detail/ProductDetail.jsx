@@ -14,24 +14,14 @@ const ProductDetail = ({item}) => {
     const incrementar = () => setQty(qty + 1);
     const decrementar = () => setQty(qty - 1);
 
-	
-
-    const onAdd = () => {
-
-      
+    const onAdd = () => {     
 
         setMensaje(Swal.fire({
             title: `Has agregado ${qty} items al carrito `,
             icon: 'success',
             width: 600,
             padding: '3em',
-          }))
-
-          
-          
-    
-
-        
+          }))    
 
         const actualId = item.id;
         const exist = data.carrito.some(items => items.id === actualId);
@@ -42,16 +32,16 @@ const ProductDetail = ({item}) => {
                     producto.cantidad += qty;
                         return producto;
                 } else {
-                
-                return producto;
-            }
-          });
+                         return producto;
+                }
+            });
+
            setData({
                carrito: [...productosCarrito],
                cantidad: data.cantidad + qty,
                precioTotal: data.precioTotal + (item.precio * qty)
-
            })
+                history.push("/cart");
 
 
         } else {
@@ -59,22 +49,14 @@ const ProductDetail = ({item}) => {
             setData({ ...data,
                 carrito: [...data.carrito, item],
                 cantidad: data.cantidad + qty,
-                precioTotal: data.precioTotal + (item.precio * qty)
-
-            
-        });
-            
-        }
-           
-      }
-
-
-
-    
+                precioTotal: data.precioTotal + (item.precio * qty)    
+            });
+                history.push("/cart");           
+            }         
+    }
+   
     return (
-        
-        
-        
+            
         <article className="product">
             
             <div className="foto">
@@ -92,13 +74,13 @@ const ProductDetail = ({item}) => {
                 <div className="d-flex justify-content-center">
 
                     <button className= "btn btn-secondary" onClick={decrementar} disabled={qty <= 1 ? true : null }>  - </button>
-                    <h2 className="hola mt-1 strong mt-4 ml-3 mr-3">{qty}</h2>
+                    <h2 className="hola strong mt-2 ml-3 mr-3">{qty}</h2>
                     <button className="btn btn-secondary" onClick={incrementar}  disabled= {qty === item.stock ? true : null }> + </button>	
                     
 
                 </div>
                 
-                <button className="agregar" className="btn-lg mt-5" onClick={onAdd}>Agregar al carrito</button>
+                <button className="btn-lg mt-5" onClick={onAdd}>Agregar al carrito</button>
             
             </div>
         </article>

@@ -1,18 +1,5 @@
-/* .Category ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-}
-
-.Category ul li {
-  width: 20%;
-  list-style: none;
-} */
-
 .Category {
-  padding: 2rem 0;
-   
+  padding: 2rem 0; 
 }
 
 .Category h2 {
@@ -27,8 +14,7 @@
 .Category ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  
+  justify-content: center;  
 }
 
 .Category ul li {

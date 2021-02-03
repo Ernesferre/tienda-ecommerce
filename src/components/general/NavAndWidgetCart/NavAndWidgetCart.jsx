@@ -1,4 +1,3 @@
-
 import {useState} from 'react';
 import './NavAndWidgetCart.css';
 import Nav from '../Nav/Nav';
@@ -16,7 +15,7 @@ const NavAndWidgetCart = () => {
         
         return (
                 <>
-                        <Nav  titulo="Tienda Musikal" action={openWidgetCart}/>
+                        <Nav  titulo="Tienda Musikal"  action={openWidgetCart}/>
                         <WidgetCart show={showWidgetCart} action={openWidgetCart} />       
                 </>
                                               

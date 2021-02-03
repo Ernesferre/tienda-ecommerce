@@ -29,12 +29,11 @@ function Nav({titulo, action}) {
     
     ]
     
-    // const qty = 1;
     
     return (
         <nav>
             <div className="container">
-                <h1><Link to={"/"} >{titulo} </Link></h1>
+                <h1 className="mt-2"><Link to={"/"} >{titulo} </Link></h1>
 
                 <ul>
                    {

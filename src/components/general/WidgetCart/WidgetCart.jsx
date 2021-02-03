@@ -7,9 +7,7 @@ import {Link} from 'react-router-dom';
 
 const WidgetCart = ({show, action}) => {
     const [data,setData] = useContext (Store);
-    
-  
-       
+          
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`} >
 
@@ -25,40 +23,18 @@ const WidgetCart = ({show, action}) => {
             
                 data.carrito.map(item => 
                     <>  
-                        <div className="card text-white text-center mt-1 ml-2 mr-2 border-2cler">
+                        <div className="card text-white text-center mt-1 ml-2 mr-2 mb-2">
                         
                             <h5 className="mt-2"> {item.titulo} </h5>
                             <p> Cant: {item.cantidad} </p>   
                             
                         </div>
-                        <br/>
+                        
                     </>  
-                    
-                    
-                
-                
-                )
-
-                
-                
-            
-                              
+                )                   
             )}
 
-            <Link to={`/Cart`} className="btn btn-outline-danger btn-lg btn-block text-center" onClick={action}>Ver Resumen</Link>
-
-
-                   
-            
-            {/* <button className="btn btn-dark float-none"> Vaciar Carrito </button> */}
-
-            
-            
-            <br/>
-            <hr/>
-            {/* <button className="btn btn-danger img-fluid"  onClick={action}>Cerrar widget</button> */}
-            
-            
+            <Link to={`/Cart`} className="btn btn-outline-success btn-lg btn-block text-center" onClick={action}>Ver Resumen</Link>
            
         </div>
     )

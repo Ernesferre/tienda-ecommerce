@@ -1,9 +1,6 @@
 
-
-  body {
-  background:#FFDB5C;
-  background: -webkit-linear-gradient(to bottom, black, #FFDB5C);
-  background: linear-gradient(to bottom, black, #FFDB5C); 
+body {
+  background:white;
 }  
 
 .site-layout-content {
@@ -18,8 +15,23 @@
   flex-direction: row;
   background: darkgray;
   justify-content: space-around;
+}
 
-  &__row {
-    text-align: center;
-  }
+.checkout h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+}
+
+form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: black;
+  color: white;
+  border-radius: 2rem;
+  text-align: center;  
+}
+
+.checkout p {
+  text-align: center;
+  font-weight: bold;
 }

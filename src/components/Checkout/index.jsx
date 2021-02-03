@@ -1,9 +1,9 @@
 import {useState, useContext} from 'react';
 import {Store} from '../../store';
 import './Checkout.css';
-
 import {getFirestore} from '../../db';
 import firebase from 'firebase/app';
+import {Link} from 'react-router-dom';
 
 const Checkout = () => {
     const db = getFirestore();
@@ -38,34 +38,24 @@ const Checkout = () => {
             setIdCompra(id);
         })
         .catch (e => console.log(e));
-    }
-
-
-        
-
-    
-        // VALIDACION DE FORMULARIO ------------------------------------------------------------------
-
-    
-        
+    }   
 
     return (
-        <body>
+        <div className="checkout text-center">
             
-        <h2 className="text-white text-center"> CheckOut </h2>
+        <h2 className="titulo text-center mt-3"> CheckOut </h2>
 
-        
-
-            <div className="container mt-5 mb-3">
-                <div className="row mt-3">
-                    <div class="col">
+            <div className="container mt-5 mb-3 text-center">
+                <div className="row mt-3 text-center">
+                    <div class="col text-center">
 
                     {
                         !venta ?
 
-                            <form onSubmit={handleSubmitForm} id="formulario" action="">
+                            <form onSubmit={handleSubmitForm} id="formulario" action="" className="container text-center mb-4" style={{width: "25rem"}}>
+                                   
                                    <div className="form-group">
-                                          <label for="nombre" className="text-white">Nombre</label>
+                                          <label for="nombre">Nombre</label>
                                           <input 
                                             type="text"     
                                             className="form-control"
@@ -120,22 +110,12 @@ const Checkout = () => {
 
                                    </div>
 
-                                   {/* <div className="form-group">
-                                          <label for="pais">Pais</label>
-                                          <select name="pais" id="pais" className="form-control">
-                                                 <option value="mexico">Mexico</option>
-                                                 <option value="espana">España</option>
-                                                 <option value="colombia">colombia</option>
 
-                                          </select>
-
-                                   </div> */}
-
-                                   <p> Seleccionar Forma de Pago</p>
+                                   <p className="pagp"> Seleccionar Forma de Pago </p>
 
                                    <div clasName="centrado" >
                                         <div className="form-check">
-                                                <label class="form-check-label">
+                                                <label className="form-check-label">
                                                         <input type="radio" name="sexo" id="hombre" 
                                                                 className="form-check-input mr-2" required/> Transferencia Bancaria
                                                                 
@@ -149,12 +129,7 @@ const Checkout = () => {
 
                                         </div>
                                    </div>
-                                   {/* <div className="form-check mb-3">
-                                          <label class="form-check-label">
-                                                 <input type="checkbox" name="terminos" id="terminos"
-                                                        className="form-check-input mr-2"/> Acepto Terminos
-                                          </label>
-                                   </div> */}
+                                  
 
                                    <input 
                                     type="submit" 
@@ -164,21 +139,23 @@ const Checkout = () => {
                                     />
 
                             </form>:
-                            <p className="display-4"> Su Compra fue efectuada correctamente. Conserve este numero de seguimiento: <br/> <hr/> <span className="text-success"> {idCompra}</span> </p>
-                            }
-                        </div>
-                     </div>
+                            
+                            <>
+                                	<h3 className=""> Su Compra fue efectuada correctamente. Conserve este numero de seguimiento: <br/><br/> <span className="text-success mb-5"> {idCompra}</span> </h3>
+                                    <Link to={`/`} className="btn btn-warning mb-5 mt-5">Volver a Home</Link>
+                            </>
+                    
+                    }
+                    </div>
+                    
                 </div>
+            </div>
 
-            </body>
+    </div>
             
-        )
-    }
+    )
+}
         
-
-
-
-
 export default Checkout;
 
 
