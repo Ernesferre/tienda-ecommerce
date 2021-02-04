@@ -13,7 +13,7 @@ const Checkout = () => {
         nombre: '',
         apellido:'',
         email:'',
-        tel:'',
+        telefono:'',
 
     })
     const [idCompra, setIdCompra]= useState('');
@@ -141,6 +141,7 @@ const Checkout = () => {
 
                                    <input 
                                     type="submit" 
+                                    disabled={[formData.nombre, formData.apellido, formData.email, formData.telefono].includes('')}
                                     className="btn btn-success btn-lg mt-3" 
                                     value="Enviar"
                                     id="enviar"
