@@ -40,6 +40,14 @@ const Checkout = () => {
         .catch (e => console.log(e));
     }   
 
+    const vaciarCarrito = () => {
+        setData({
+            carrito: [],
+            cantidad: 0,
+            precioTotal:0
+        })
+    }  
+
     return (
         <div className="checkout text-center">
             
@@ -133,7 +141,7 @@ const Checkout = () => {
 
                                    <input 
                                     type="submit" 
-                                    className="btn btn-success btn-lg" 
+                                    className="btn btn-success btn-lg mt-3" 
                                     value="Enviar"
                                     id="enviar"
                                     />
@@ -142,7 +150,7 @@ const Checkout = () => {
                             
                             <>
                                 	<h3 className=""> Su Compra fue efectuada correctamente. Conserve este numero de seguimiento: <br/><br/> <span className="text-success mb-5"> {idCompra}</span> </h3>
-                                    <Link to={`/`} className="btn btn-warning mb-5 mt-5">Volver a Home</Link>
+                                    <Link to={`/`} className="btn btn-warning mb-5 mt-5" onClick={() => vaciarCarrito ()}>Realizar una nueva compra</Link>
                             </>
                     
                     }

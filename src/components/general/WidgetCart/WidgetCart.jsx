@@ -18,7 +18,7 @@ const WidgetCart = ({show, action}) => {
             
             </div>
 
-            {data.carrito.length === 0 && <h3>No has comprado nada</h3>}
+            {data.carrito.length === 0 && <h3 className="text-center">Carrito Vacio</h3>}
             {data.carrito.length !== 0 &&  (
             
                 data.carrito.map(item => 

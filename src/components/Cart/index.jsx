@@ -24,13 +24,16 @@ const Cart = () => {
         
         });
 
-        const vaciarCarrito = () => {
-            setData({
-                carrito: [],
-                cantidad: 0,
-                precioTotal:0
-            })}    
+         
     }
+
+    const vaciarCarrito = () => {
+        setData({
+            carrito: [],
+            cantidad: 0,
+            precioTotal:0
+        })
+    }   
     
     return (
 
@@ -86,8 +89,8 @@ const Cart = () => {
                 {
                     data.carrito.length === 0 && 
                     <> 
-                        <p className="text-center mt-5">Actualmente no tienes artículos en tu Carrito</p>
-                        <Link to={`/`} className="btn btn-outline-dark mb-5">Volver a Comprar</Link>                    
+                        <h4 className="text-center display-5 mt-5">Actualmente no tienes artículos en tu Carrito</h4>
+                        <Link to={`/`} className="btn btn-warning mb-5 mt-4">Volver a Comprar</Link>                    
                     </>             
                     
                 }
@@ -103,12 +106,17 @@ const Cart = () => {
                 {
                     data.carrito.length !== 0 &&  (
 
-    	                <div className="link d-flex justify-content-center mt-3 mb-3">
+    	                <div className="link d-flex contenedor d-flex justify-content-center mt-3 mb-3">
 
                             <Link to={`/Checkout`} 
-                                className="btn btn-warning btn-lg text-center p-3 mb-5"    
+                                className="btn btn-success btn-lg text-white text-center p-3 mb-5 ml-5"    
                                 activeClassName="active">Finalizar Compra
                             </Link>
+                            <a 
+                                onClick={() => vaciarCarrito ()}
+                                className="btn btn-danger btn-lg text-white text-center p-3 mb-5 ml-auto mr-5">
+                                Vaciar Carrito
+                            </a>
                     
                         </div>
                     )
