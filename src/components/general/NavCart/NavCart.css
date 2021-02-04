@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+/* body {
+  width: 80%;
+} */
+
 .navCart svg {
   color:white;
   font-size: 3rem;

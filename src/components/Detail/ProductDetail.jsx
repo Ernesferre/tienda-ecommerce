@@ -80,7 +80,7 @@ const ProductDetail = ({item}) => {
 
                 </div>
                 
-                <button className="btn-lg mt-5" onClick={onAdd}>Agregar al carrito</button>
+                <button className="btn-lg mt-4" onClick={onAdd}>Agregar al carrito</button>
             
             </div>
         </article>

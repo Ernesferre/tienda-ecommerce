@@ -9,6 +9,8 @@
       color: white;
       border-color: black;
       border-style: solid; 
+      margin-left: 5rem;
+      margin-right: 5rem;
 }
     
 .product .foto img {
