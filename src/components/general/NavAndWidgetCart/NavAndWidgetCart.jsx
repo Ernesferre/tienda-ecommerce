@@ -14,10 +14,11 @@ const NavAndWidgetCart = () => {
 
         
         return (
-                <>
+                <div>
+                
                         <Nav  titulo="Tienda Musikal"  action={openWidgetCart}/>
                         <WidgetCart show={showWidgetCart} action={openWidgetCart} />       
-                </>
+                </div>
                                               
         )
 }

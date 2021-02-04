@@ -39,10 +39,11 @@ function Nav({titulo, action}) {
                    {
                        menuItems.map((seccion, index) => <NavItem key={index} text={seccion.texto} url={seccion.ruta}/>)
                    } 
+                        <NavCart className="" action={action}/>
                 </ul>
 
                 
-                <NavCart action={action}/>
+                
                 
                 
             </div>

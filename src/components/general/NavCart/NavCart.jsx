@@ -9,7 +9,7 @@ const NavCart = ({action}) => {
     const [data] = useContext(Store);
 
     return (
-        <div className="navCart" onClick={action}>
+        <div className="navCart mr-3 mb-4" onClick={action}>
             <AiOutlineShoppingCart />
             <span>{data.cantidad}</span>
         </div>
