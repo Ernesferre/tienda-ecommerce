@@ -113,6 +113,7 @@ const Cart = () => {
                                 activeClassName="active">Finalizar Compra
                             </Link>
                             <a 
+                                href="?"
                                 onClick={() => vaciarCarrito ()}
                                 className="btn btn-danger btn-lg text-white text-center p-3 mb-5 ml-auto mr-5">
                                 Vaciar Carrito

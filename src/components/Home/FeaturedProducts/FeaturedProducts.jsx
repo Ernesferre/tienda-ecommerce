@@ -21,28 +21,17 @@ const getProducstFromDB =  () => {
         let array = [];
         docs.forEach(doc => {
             array.push({id: doc.id, data: doc.data()})
-        })
-
-        console.log(array);
-
-        
+        })        
 
         setItems(array);
     })
     .catch(e => console.log(e));   
 }
 
-
     useEffect(() => {
         getProducstFromDB();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-
     }, []);
-
-
-
-
-    
 
 
     return (
