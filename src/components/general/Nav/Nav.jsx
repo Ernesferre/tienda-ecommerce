@@ -31,7 +31,7 @@ function Nav({titulo, action}) {
     
     
     return (
-        <nav>
+        <nav >
             <div className="container">
                 <h1 className="mt-2"><Link to={"/"} >{titulo} </Link></h1>
 

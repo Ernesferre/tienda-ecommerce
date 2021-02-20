@@ -35,7 +35,7 @@ const getProducstFromDB =  () => {
 
 
     return (
-        <section className="featuredProducts">
+        <section className="featuredProducts container">
             <div className="container">
                 
 
