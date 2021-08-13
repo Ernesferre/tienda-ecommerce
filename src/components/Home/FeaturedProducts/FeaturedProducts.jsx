@@ -68,7 +68,11 @@ const getProducstFromDB =  () => {
 
                             
                                 {items.map((item) => (
-                                        <Flex >
+                                        <Flex
+                                            // mt="3rem"
+                                            
+                                        >
+                                            <hr></hr>
                                             <ProductCard
                                                 id={item.id}
                                                 imagen={item.data.imagen}

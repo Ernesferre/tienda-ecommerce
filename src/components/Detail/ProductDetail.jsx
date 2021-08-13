@@ -4,7 +4,7 @@ import {Store} from '../../store';
 import {useHistory} from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { createBreakpoints } from "@chakra-ui/theme-tools"
-import { Box, HStack, SimpleGrid, Stack, Image, Center, Heading, Text, Button } from "@chakra-ui/react"
+import { Box, HStack, SimpleGrid, Stack, Image, Center, Heading, Text, Button, VStack } from "@chakra-ui/react"
 
 
 
@@ -146,10 +146,11 @@ const ProductDetail = ({item}) => {
 
         {/* // MOBILE // */}
         <Box  
-            bg="grey" 
+             
             textAlign="center"
             w="100%" 
-            h="auto" 
+            h="auto"
+            mt="4rem" 
             d={{base: "flex", md: "none"}} 
             direction="row" 
             // justifyContent="space-between" 
@@ -158,14 +159,75 @@ const ProductDetail = ({item}) => {
             border="1px" 
             borderColor="gray.200"
         >
-            Tamaño Mobile
-            <Stack 
+            {/* Tamaño Mobile */}
+            <VStack 
                 d="flex" 
                 direction={{base: "column", md: "row"}} 
                 justifyContent={{base: "center", md: "space-around"}}
+                mx="auto"
             >
+                <Box
+                    alignItems="center"
+                    w="100%"
+                    mx="auto"
+                >
+                    <Image 
+                        src={`/products/${item.imagen}`} 
+                        mx="auto" 
+                        width="250px"  
+                    />
+                </Box>
+
+                <Box
+                 p={2}
+                >
+                    <Heading 
+                        fontFamily="Georama"
+                        letterSpacing={2}
+                        
+                        mb={2}
+                    >
+                        {item.titulo}
+                    </Heading>
+
+                        {
+                            !!item.description && <Text fontFamily="Georama">{item.descriction}</Text>
+                        }
+                    <Text fontFamily="Georama" mb={3}>{item.descriction}</Text>
+                    <Text fontFamily="Georama" fontWeight="bold"> $ {item.precio}</Text>
+                    
+                    <Box 
+                        className="d-flex justify-content-center"
+                        mt={4}
+                    >
+
+                        <button className= "btn btn-secondary" onClick={decrementar} disabled={qty <= 1 ? true : null }>  - </button>
+                        <h2 className="hola strong mt-2 ml-3 mr-3">{qty}</h2>
+                        <button className="btn btn-secondary" onClick={incrementar}  disabled= {qty === item.stock ? true : null }> + </button>	
+                        
+
+                    </Box>
+                    
+                    <Button 
+                        variant="solid"
+                        colorScheme="yellow"
+                        onClick={onAdd}
+                        mt={5}
+                        
+                        _hover={{
+                            color: "green"
+                        }}
+                    >
+                        Agregar al carrito
+                    </Button>
+            
+                </Box>
+
+
+
+
                 
-            </Stack>
+            </VStack>
 
 
         </Box>
