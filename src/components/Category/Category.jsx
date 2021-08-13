@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import ProductCard from '../general/ProductCard/ProductCard';
 import './Category.css';
 import {getFirestore} from '../../db';
+import { Box, Flex , Heading, SimpleGrid} from "@chakra-ui/react";
 
 const Category = () => {
     const {category_name} = useParams();
@@ -27,13 +28,29 @@ const Category = () => {
 
     return product ? (
         
-        <div className="Category">
+        <SimpleGrid 
+                
+                textAlign="center"
+                mt={10}
+                mb={10}
+                m={6}
+                bg="white"
+            >
             
-            <h2>{category_name}</h2>
-            <ul> 
-                {
-                    product.map((product) => (
-                        <li key={product.id}>
+            <Heading
+                fontFamily="Georama"
+                mt="5rem"
+                mb="3rem"
+            >
+                {category_name}
+            </Heading>
+
+            <Flex                
+                flexWrap="wrap"
+                justifyContent="center"
+            >
+                {product.map((product) => (
+                        <Flex >
                             <ProductCard
                                     id={product.id}
                                     imagen={product.data.imagen}    
@@ -42,12 +59,12 @@ const Category = () => {
                                     precio={product.data.precio}
                                 
                             />
-                        </li>
+                        </Flex>
                     ))
                 }
 
-            </ul>
-        </div>
+            </Flex>
+            </SimpleGrid>
     ):
                                 
     <p>Cargando producto...</p>

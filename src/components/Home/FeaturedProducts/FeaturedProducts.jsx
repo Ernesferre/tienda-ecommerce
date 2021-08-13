@@ -53,8 +53,8 @@ const getProducstFromDB =  () => {
                         <>
                             <Heading
                                 fontFamily="Georama"
-                                mt="2rem"
-                                mb="2rem"
+                                mt="5rem"
+                                mb="3rem"
                             >
                                 Productos Destacados
                             </Heading>

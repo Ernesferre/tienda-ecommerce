@@ -33,10 +33,10 @@ function Nav({titulo, action}) {
     
     return (
         
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark container-fluid navbar fixed-top">
             
             
-            <div className="container-fluid bg-dark text-white ">
+            {/* <div className="container-fluid bg-dark text-white "> */}
 
             <a className="navbar-brand bg-dark text-warning" href="/">Tienda Musikal</a>
                 
@@ -63,7 +63,7 @@ function Nav({titulo, action}) {
                     
                     </div>
                     
-            </div>
+            {/* </div> */}
 
             <NavCart className="" action={action} />
             
