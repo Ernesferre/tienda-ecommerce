@@ -1,62 +1,63 @@
 nav {
-  background:black;
+  /* background:black; */
 }
 
-nav .container {
+/* nav .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-bottom: 4rem;
-}
+  
+} */
 
-nav h1 a {
-  font-family: 'Roboto', cursive;
+/* nav h1 a {
+  font-family: 'Georama', cursive;
   color:#FFDB5C;
   font-size: 4rem;
   letter-spacing: -0.5px;
   margin-bottom: 1rem;
   font-weight: 900;
-}
+} */
 
-nav h1 a:hover {
+/* nav h1 a:hover {
   text-decoration: none;
-  font-size: 5rem;
+  
   color:#FFDB5C;
-}
+} */
 
-nav ul {
+/* nav ul {
   display: flex;
-}
+} */
 
 nav ul li {
-  margin: 0 4rem;
-  list-style: none;
-  margin-top: 2rem;
-  margin-bottom: -2rem;
+  /* display: flex; */
+  /* margin: 0 4rem;
+  list-style: none; */
+  /* margin-top: 2rem;
+  margin-bottom: -2rem; */
 }
 
-nav ul li :hover{
-  color: powderblue;
+/* nav ul li :hover{
+  color: yellow;
   text-decoration: none;
   font-size: 1.5rem;  
-}
+} */
 
-nav ul li:first-child {
+/* nav ul li:first-child {
   margin-left: 0;
-}
+} */
 
-nav ul li:last-child {
+/* nav ul li:last-child {
   margin-right: 0;
-}
+} */
 
-nav ul li a {
+/* nav ul li a {
   color: white;
   font-size: 1.5rem;
   position: relative;
-}
+} */
 
-nav ul li a::after {
+/* nav ul li a::after {
   content: "";
   display: block;
   width: 100%;
@@ -66,8 +67,8 @@ nav ul li a::after {
   bottom: -0.5rem;
   opacity: 0;
   transition: opacity 0.2s;
-}
+} */
 
-nav ul li a:hover::after {
+/* nav ul li a:hover::after {
   opacity: 1;
-}
+} */

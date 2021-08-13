@@ -18,6 +18,7 @@ import WhatsApp from './components/WhatsApp/WhatsApp'
 export default function App() {
 
   return (  
+      
       <StoreProvider>
         <BrowserRouter>
           {/* El "NavAndWidgetCart" queda fijo en todo momemto */}

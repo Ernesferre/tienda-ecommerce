@@ -3,6 +3,7 @@ import {useState,useEffect} from "react";
 import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
 import {getFirestore} from '../../../db';
+import { Box, Flex , Heading, SimpleGrid} from "@chakra-ui/react";
 // import portada from '../../../../public/products/bateria4.jpg';
 
 
@@ -33,24 +34,41 @@ const getProducstFromDB =  () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    console.log(items)
 
     return (
-        <section className="featuredProducts container">
-            <div className="container">
+        
+            <SimpleGrid 
+                
+                textAlign="center"
+                mt={10}
+                mb={10}
+                m={6}
+                bg="white"
+            >
                 
 
                 {
                     items.length ?
                         <>
-                            <h2>Productos Destacados</h2>
-                            {/* <img src={bateria4.jpg}/> */}
+                            <Heading
+                                fontFamily="Georama"
+                                mt="2rem"
+                                mb="2rem"
+                            >
+                                Productos Destacados
+                            </Heading>
                             
+                            
+                            <Flex
+                                
+                                flexWrap="wrap"
+                                justifyContent="center"
+                            >
 
-                            <ul>
-                                {
-                                    
-                                    items.map((item) => (
-                                        <li key={item.id}>
+                            
+                                {items.map((item) => (
+                                        <Flex >
                                             <ProductCard
                                                 id={item.id}
                                                 imagen={item.data.imagen}
@@ -58,18 +76,19 @@ const getProducstFromDB =  () => {
                                                 descriction={item.data.descriction} 
                                                 precio={item.data.precio}
                                             />
-                                        </li>
+                                        </Flex>
                                     ))
                                 }
-                            </ul>    
-                        </>:
+                            
+                            </Flex>  
+                        </> :
                         
                         
                     <p className="cargando">Cargando Items...</p>
                 }
-                </div>
+                </SimpleGrid>
             
-        </section>
+        
     )
 }
 

@@ -2,7 +2,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  top: 7.8rem;
+  /* top: 7.8rem; */
   cursor: pointer;
 }
 
@@ -12,7 +12,7 @@
 
 .navCart svg {
   color:white;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .navCart span {
