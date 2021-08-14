@@ -6,7 +6,7 @@ import './index.css';
 import ListShow from './ListShow'
 
 
-import { Heading, SimpleGrid, Box, HStack, Text } from '@chakra-ui/react';
+import { Heading, SimpleGrid, Box, HStack, Text, Button, Flex, Spacer } from '@chakra-ui/react';
 
 
 const Cart = () => {
@@ -43,6 +43,7 @@ const Cart = () => {
 
         <Box
             mt="5rem"
+            
         >
 
 
@@ -135,8 +136,45 @@ const Cart = () => {
                             )
                         }
 
+            
+
                 </Box>
             
+            <Heading
+                textAlign="center"
+                mt="2rem"
+                fontSize="xl"
+                fontFamily="Georama"
+                color="grey"
+            >
+                El total de tu compra es de $ {data.precioTotal}
+            </Heading>
+
+            
+
+            <Flex
+                mb="2rem"
+                mt="4rem"
+                w="90%"
+                m={4}
+            >
+                <Link to={`/Checkout`}>
+                    <Button
+                        colorScheme="green"
+                    >
+                        Avanzar
+                    </Button>
+                </Link>
+
+                <Spacer />
+                    
+                <Button
+                    colorScheme="red"
+                    onClick={() => vaciarCarrito ()}
+                >
+                    Vaciar Carrito
+                </Button>
+            </Flex>
             
 
             {/* <table className="table mb-4 mt-5 lead text-center">

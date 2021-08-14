@@ -1,6 +1,7 @@
 import React from 'react'
-import { Heading, SimpleGrid, Box, HStack, Text, Image } from '@chakra-ui/react';
+import { Heading, SimpleGrid, Box, HStack, Text, Image, Button } from '@chakra-ui/react';
 import { FaTrash } from 'react-icons/fa'
+
 
 const ListShow = (props) => {
     
@@ -11,6 +12,7 @@ const ListShow = (props) => {
     console.log(deleteFromCart)
 
     return (
+        <>
         <SimpleGrid  
             bg="#fff" 
             // border="1px" 
@@ -21,6 +23,7 @@ const ListShow = (props) => {
             // p={1} 
             d={{base: "grid", md: "grid"}}
             mx="auto"
+            p={2}
         >
             <HStack height="60px">
                     <Image
@@ -59,6 +62,14 @@ const ListShow = (props) => {
             
 
       </SimpleGrid>
+
+    
+
+
+      
+
+        
+    </>
     )
 }
 

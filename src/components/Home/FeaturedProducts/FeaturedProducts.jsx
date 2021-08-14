@@ -3,7 +3,7 @@ import {useState,useEffect} from "react";
 import ProductCard from '../../general/ProductCard/ProductCard';
 import './FeaturedProducts.css';
 import {getFirestore} from '../../../db';
-import { Box, Flex , Heading, SimpleGrid} from "@chakra-ui/react";
+import { Box, Flex , Heading, SimpleGrid, Text} from "@chakra-ui/react";
 // import portada from '../../../../public/products/bateria4.jpg';
 
 
@@ -88,7 +88,12 @@ const getProducstFromDB =  () => {
                         </> :
                         
                         
-                    <p className="cargando">Cargando Items...</p>
+                    <Text 
+                        mt="3rem"
+                        className="cargando"
+                    >
+                        Cargando Items...
+                    </Text>
                 }
                 </SimpleGrid>
             

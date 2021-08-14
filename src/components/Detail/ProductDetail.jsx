@@ -222,11 +222,6 @@ const ProductDetail = ({item}) => {
                     </Button>
             
                 </Box>
-
-
-
-
-                
             </VStack>
 
 
