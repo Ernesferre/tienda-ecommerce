@@ -4,6 +4,7 @@ import './Checkout.css';
 import {getFirestore} from '../../db';
 import firebase from 'firebase/app';
 import {Link} from 'react-router-dom';
+import { Box, Heading } from '@chakra-ui/react';
 
 const Checkout = () => {
     const db = getFirestore();
@@ -49,9 +50,19 @@ const Checkout = () => {
     }  
 
     return (
-        <div className="checkout text-center">
+        <Box 
+            // className="checkout text-center mt-5"
+            mt="5rem"
+            fontFamily="Georama"
+        >
             
-        <h2 className="titulo text-center mt-3"> CheckOut </h2>
+        <Heading 
+            className="titulo text-center mt-5"
+            fontFamily="Georama"
+
+        > 
+            CheckOut
+        </Heading>
 
             <div className="container mt-5 mb-3 text-center">
                 <div className="row mt-3 text-center">
@@ -160,7 +171,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-    </div>
+    </Box>
             
     )
 }

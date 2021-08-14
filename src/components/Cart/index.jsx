@@ -4,6 +4,7 @@ import {Store} from '../../store';
 import {Link} from 'react-router-dom';
 import './index.css';
 import ListShow from './ListShow'
+import Swal from 'sweetalert2'
 
 
 import { Heading, SimpleGrid, Box, HStack, Text, Button, Flex, Spacer } from '@chakra-ui/react';
@@ -20,23 +21,63 @@ const Cart = () => {
             const ProdRetirado = data.carrito.find((prod) => prod.id === id );
             const EliminarProd = data.carrito.filter((prod) => prod.id !== id);
         
-        setData({
-            ...data,
-            carrito: EliminarProd,
-            cantidad: data.cantidad - ProdRetirado.cantidad,
-            precioTotal: data.precioTotal - (ProdRetirado.precio*ProdRetirado.cantidad)
+            Swal.fire({
+                title: 'Estas seguro que quieres eliminar este articulo ?',
+                // text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: 'grey',
+                confirmButtonText: 'Si, eliminar!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                setData({
+                    ...data,
+                    carrito: EliminarProd,
+                    cantidad: data.cantidad - ProdRetirado.cantidad,
+                    precioTotal: data.precioTotal - (ProdRetirado.precio*ProdRetirado.cantidad)
+                
+                });
+                  Swal.fire(
+                    'Eliminado!',
+                    'Su articulo ha sido eliminado',
+                    'success'
+                  )
+                }
+              })
+
         
-        });
+
+       
 
          
     }
 
     const vaciarCarrito = () => {
-        setData({
-            carrito: [],
-            cantidad: 0,
-            precioTotal:0
-        })
+
+        Swal.fire({
+            title: 'Estas Seguro de Vaciar tu Carrito de Compras?',
+            text: "No podras revertir esta accion !",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: 'grey',
+            confirmButtonText: 'Si, vaciar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                setData({
+                    carrito: [],
+                    cantidad: 0,
+                    precioTotal:0
+                })
+              Swal.fire(
+                'Vaciado!',
+                'Su Carrito ha sido eliminado',
+                'success'
+              )
+            }
+          })
+        
     }   
     
     return (
@@ -65,7 +106,8 @@ const Cart = () => {
                         px={4} 
                         columns={6}  
                         spacingY="10px" 
-                        spacingX="10px" 
+                        spacingX="10px"
+                        fontWeight="bold" 
                         // border="1px" 
                         borderColor="gray.200" 
                         // bg="bgGray.100" 
@@ -82,31 +124,31 @@ const Cart = () => {
                         </HStack>
 
                         <HStack height="60px">
-                                <Text fontSize="14px">
+                                <Text fontSize="14px" mx="auto">
                                     Articulo
                                 </Text>    
                         </HStack>
 
                         <HStack height="60px">
-                            <Text fontSize="14px">
+                            <Text fontSize="14px" mx="auto">
                                 Cantidad
                             </Text>    
                         </HStack>
 
                         <HStack height="60px">
-                            <Text fontSize="14px">
+                            <Text fontSize="14px" mx="auto">
                                 Precio Unitario
                             </Text>    
                         </HStack>
 
                         <HStack height="60px">
-                            <Text fontSize="14px">
+                            <Text fontSize="14px" mx="auto">
                                 Precio total
                             </Text>    
                         </HStack>
 
                         <HStack height="60px">
-                            <Text fontSize="14px">
+                            <Text fontSize="14px" mx="auto">
                                 Accion
                             </Text>    
                         </HStack>
@@ -128,8 +170,11 @@ const Cart = () => {
                             ) : (
                                 <Heading 
                                     textAlign="center" 
+                                    fontSize="xl"
+                                    color="red"
                                     marginTop={4} 
-                                    marginBottom={4}
+                                    mb="2rem"
+                                    p={3}
                                 >
                                     Carrito Vacio
                                 </Heading>
@@ -143,6 +188,7 @@ const Cart = () => {
             <Heading
                 textAlign="center"
                 mt="2rem"
+                mb='2rem'
                 fontSize="xl"
                 fontFamily="Georama"
                 color="grey"
@@ -151,12 +197,15 @@ const Cart = () => {
             </Heading>
 
             
+            {
+                data.carrito.length !== 0 && (
 
             <Flex
                 mb="2rem"
                 mt="4rem"
                 w="90%"
                 m={4}
+                // spacingX={4}
             >
                 <Link to={`/Checkout`}>
                     <Button
@@ -175,6 +224,9 @@ const Cart = () => {
                     Vaciar Carrito
                 </Button>
             </Flex>
+
+                )
+            }
             
 
             {/* <table className="table mb-4 mt-5 lead text-center">

@@ -3,6 +3,7 @@ import ProductDetail from './ProductDetail.jsx'
 import {useParams} from 'react-router-dom';
 import './index.css';
 import {getFirestore} from '../../db';
+import { Box, Text } from '@chakra-ui/react';
 
 const Detail = () => {
   const {itemId} = useParams();
@@ -23,14 +24,15 @@ const Detail = () => {
 
 
   return product ? (
-    <div className="container">
-        <ProductDetail 
-        item={product}
-      />
-    </div>
+    
+    <Box 
+      className="container"
+    >
+        <ProductDetail item={product}/>
+    </Box>
   ):
 
-  <p>Cargando producto...</p>
+  <Text>Cargando producto...</Text>
 
 }
 
