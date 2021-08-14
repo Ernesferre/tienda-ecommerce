@@ -3,6 +3,10 @@ import {useContext} from 'react';
 import {Store} from '../../store';
 import {Link} from 'react-router-dom';
 import './index.css';
+import ListShow from './ListShow'
+
+
+import { Heading, SimpleGrid, Box, HStack, Text } from '@chakra-ui/react';
 
 
 const Cart = () => {
@@ -37,11 +41,105 @@ const Cart = () => {
     
     return (
 
-        <div className="cart container">
-            
-            <h1 className="text-center mt-4 mb-3">Resumen de Compra</h1>
+        <Box
+            mt="5rem"
+        >
 
-            <table className="table mb-4 mt-5 lead text-center">
+
+            <Heading 
+                    className="text-center mt-4 mb-3"
+                    fontFamily="Georama"
+                >Resumen de Compra
+            </Heading>
+
+                <Box 
+                    w="95%" 
+                    m="auto" 
+                    // bg="rgba(0, 0, 0, 0.02)" 
+                    boxShadow="lg" 
+                    borderRadius="4px"
+                >
+
+                    <SimpleGrid 
+                        px={4} 
+                        columns={6}  
+                        spacingY="10px" 
+                        spacingX="10px" 
+                        // border="1px" 
+                        borderColor="gray.200" 
+                        // bg="bgGray.100" 
+                        display={{base: "none", md: "grid"}} 
+                        // borderRadius="4px" 
+                        textDecoration="bold"
+                    >
+                    
+
+                        <HStack height="60px">
+                                <Text fontSize="14px">
+                                    Imagen
+                                </Text>    
+                        </HStack>
+
+                        <HStack height="60px">
+                                <Text fontSize="14px">
+                                    Articulo
+                                </Text>    
+                        </HStack>
+
+                        <HStack height="60px">
+                            <Text fontSize="14px">
+                                Cantidad
+                            </Text>    
+                        </HStack>
+
+                        <HStack height="60px">
+                            <Text fontSize="14px">
+                                Precio Unitario
+                            </Text>    
+                        </HStack>
+
+                        <HStack height="60px">
+                            <Text fontSize="14px">
+                                Precio total
+                            </Text>    
+                        </HStack>
+
+                        <HStack height="60px">
+                            <Text fontSize="14px">
+                                Accion
+                            </Text>    
+                        </HStack>
+
+                    </SimpleGrid>
+
+
+                        {/* CONTENIDO DE TABLA */}
+
+                        
+                        {data.carrito.length > 0  ? (
+                                
+                                data.carrito.map((el) => 
+                                    <ListShow 
+                                        key={el.id} {...el} 
+                                        deleteFromCart={deleteFromCart} 
+                                        
+                                />)
+                            ) : (
+                                <Heading 
+                                    textAlign="center" 
+                                    marginTop={4} 
+                                    marginBottom={4}
+                                >
+                                    Carrito Vacio
+                                </Heading>
+                            )
+                        }
+
+                </Box>
+            
+            
+
+            {/* <table className="table mb-4 mt-5 lead text-center">
 
                 <thead className="table">
                     <tr>
@@ -121,9 +219,10 @@ const Cart = () => {
                     
                         </div>
                     )
-                }
+                } */}
 
-        </div>
+        
+        </Box>
     )
 }
 export default Cart;

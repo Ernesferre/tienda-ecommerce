@@ -39,6 +39,7 @@ const Category = () => {
             
             <Heading
                 fontFamily="Georama"
+                letterSpacing={3}
                 mt="5rem"
                 mb="3rem"
             >
