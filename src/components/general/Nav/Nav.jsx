@@ -56,7 +56,7 @@ function Nav({titulo, action}) {
 
                 
             <div 
-                className=" navbar-nav navbar-collapse text-white mx-5" 
+                className=" navbar-nav collapse navbar-collapse text-white mx-5" 
                 id="navbarTogglerDemo01"
             >
                 {/* <div 
