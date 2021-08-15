@@ -1,4 +1,4 @@
-// import './Nav.css';
+import './Nav.css';
 import NavItem from '../NavItem/NavItem';
 import NavCart from '../NavCart/NavCart';
 import { NavLink} from 'react-router-dom'
@@ -56,7 +56,7 @@ function Nav({titulo, action}) {
 
                 
             <div 
-                className="navbar-nav collapse navbar-collapse text-white mx-auto mr-5" 
+                className=" navbar-nav navbar-collapse text-white mx-5" 
                 id="navbarTogglerDemo01"
             >
                 {/* <div 

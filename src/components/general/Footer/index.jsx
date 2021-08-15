@@ -8,7 +8,7 @@ const Footer = () => {
                 className="container"
                 bg="grey.900"
             >
-                <Text fontSize="medium" fontFamily="Georama">Hecho por   <Heading fontSize="medium" fontWeight="bold" fontFamily="Georama">Ernesto Ferreyra</Heading></Text>
+                <Text fontSize="medium" fontFamily="Georama">Hecho por   <Heading letterSpacing={3} fontSize="medium" fontWeight="bold" fontFamily="Georama">Ernesto Ferreyra</Heading></Text>
             </Box>
         </footer>
     )

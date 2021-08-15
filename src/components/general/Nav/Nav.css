@@ -1,5 +1,6 @@
 nav {
   /* background:black; */
+  font-family: 'Georama';
 }
 
 /* nav .container {
@@ -10,20 +11,19 @@ nav {
   
 } */
 
-/* nav h1 a {
-  font-family: 'Georama', cursive;
-  color:#FFDB5C;
+nav a {
+  font-family: 'Georama';
+  /* color:#FFDB5C;
   font-size: 4rem;
   letter-spacing: -0.5px;
   margin-bottom: 1rem;
-  font-weight: 900;
-} */
+  font-weight: 900; */
+}
 
-/* nav h1 a:hover {
-  text-decoration: none;
-  
-  color:#FFDB5C;
-} */
+a:hover {
+  /* text-decoration: none; */
+  color: white;
+}
 
 /* nav ul {
   display: flex;

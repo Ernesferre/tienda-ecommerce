@@ -7,7 +7,7 @@ import ListShow from './ListShow'
 import Swal from 'sweetalert2'
 
 
-import { Heading, SimpleGrid, Box, HStack, Text, Button, Flex, Spacer } from '@chakra-ui/react';
+import { Heading, SimpleGrid, Box, HStack, Text, Button, Flex, Spacer, Container } from '@chakra-ui/react';
 
 
 const Cart = () => {
@@ -85,6 +85,7 @@ const Cart = () => {
         <Box
             mt="5rem"
             
+            
         >
 
 
@@ -94,6 +95,7 @@ const Cart = () => {
                 >Resumen de Compra
             </Heading>
 
+        
                 <Box 
                     w="95%" 
                     m="auto" 
@@ -203,15 +205,18 @@ const Cart = () => {
             <Flex
                 mb="2rem"
                 mt="4rem"
-                w="90%"
+                w="92%"
                 m={4}
+                alignContent= "center"
+                textAlign="center"
                 // spacingX={4}
             >
                 <Link to={`/Checkout`}>
                     <Button
+                        ml={2}
                         colorScheme="green"
                     >
-                        Avanzar
+                        Finalizar compra
                     </Button>
                 </Link>
 
