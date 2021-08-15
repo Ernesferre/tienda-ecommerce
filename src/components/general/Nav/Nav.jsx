@@ -1,8 +1,8 @@
 // import './Nav.css';
 import NavItem from '../NavItem/NavItem';
 import NavCart from '../NavCart/NavCart';
-import {Link, NavLink} from 'react-router-dom'
-import {Box, Flex, HStack, Dropdown} from '@chakra-ui/react'
+import { NavLink} from 'react-router-dom'
+import {Box, Flex, HStack, Dropdown, Link} from '@chakra-ui/react'
 
 function Nav({titulo, action}) {
    
@@ -32,6 +32,7 @@ function Nav({titulo, action}) {
     
     
     return (
+        <>
         
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark container-fluid navbar fixed-top">
             
@@ -39,40 +40,51 @@ function Nav({titulo, action}) {
             {/* <div className="container-fluid bg-dark text-white "> */}
 
             <a className="navbar-brand bg-dark text-warning" href="/">Tienda Musikal</a>
+
+            <div className="navbar-nav collapse navbar-collapse">
+                <NavCart action={action} /> 
+            </div>
                 
             
-                <button className="navbar-toggler navbar-toggler text-warning mx-auto btn-warning"  type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            <button className="navbar-toggler text-warning mx-right btn-warning"  type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
                 
 
                 
                
 
                 
-                    <div className="navbar-nav collapse navbar-collapse text-center mr-5 text-white" id="navbarTogglerDemo01">
-                        <div className="navbar-nav text-center text-white mx-auto">
-                        
-                            
-                                <a className="nav-item nav-link text-white" aria-current="page" href="/Category/Guitarras">Guitarras</a>
-                                <a className="nav-item nav-link text-white" href="/Category/Bajos">Bajos</a>                        
-                                <a className="nav-item nav-link text-white" href="/Category/Baterias">Baterias</a>                           
-                                <a className="nav-item nav-link text-white" href="/Category/Microfonos">Microfonos</a>                       
-                                <a className="nav-item nav-link text-white" href="/Category/Accesorios">Accesorios</a>
-                        </div>
-                    
-                    </div>
-                    
-            {/* </div> */}
+            <div 
+                className="navbar-nav collapse navbar-collapse text-white mx-auto mr-5" 
+                id="navbarTogglerDemo01"
+            >
+                {/* <div 
+                    className="navbar-nav text-center text-white mx-auto"
+                > */}
+                             
+                    <a className="nav-item nav-link text-white" aria-current="page" href="/Category/Guitarras">Guitarras</a>
+                    <a className="nav-item nav-link text-white" href="/Category/Bajos">Bajos</a>                        
+                    <a className="nav-item nav-link text-white" href="/Category/Baterias">Baterias</a>                           
+                    <a className="nav-item nav-link text-white" href="/Category/Microfonos">Microfonos</a>                       
+                    <a className="nav-item nav-link text-white" href="/Category/Accesorios">Accesorios</a>
 
-            <NavCart className="" action={action} />
+                {/* </div>        */}
+            </div>
+
+
+            
+
+                    
             
         </nav>
+
+        
         
         
             
                 
-                
+    </>
             
         
         
