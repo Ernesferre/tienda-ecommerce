@@ -74,8 +74,7 @@ const ProductDetail = ({item}) => {
             mb="3rem"
             mx="auto"
             borderColor="gray.100"
-            height="25rem"
-            // columns={6} 
+            minHeight="100vh" 
             spacingY="10px" 
             spacingX="10px" 
             p={8} 
